@@ -1,9 +1,0 @@
-{
-    "band" : ["AULAIDEAL.COM"],
-    "nav": {
-        "NOSOTROS":"#",
-        "SERVICIOS": "#",
-        "PORTAFOLIOS": "#",
-        "CONTACTO" : "#"
-    }
-}
