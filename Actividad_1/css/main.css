@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "fontawesome-webfont";
+    src: url('../fonts/opensans-regular-webfont.woff');
+}
+
+
+:root{
+    --color-primario: #EF5E3F;
+    --color-secundario: rgba(0, 0, 0, 0.5);
+    --index-z-back: 1;
+    --index-z-front: 2;
+}
+
+body{
+    font-family: "fontawesome-webfont" !important;
+}
+
+nav{
+    font-size: 24px;
+    opacity: 0.9 !important;
+}
+
+.navbar-brand{
+
+    font-size: 24px;
+}
+
+.nav-item:hover{
+    background: var(--color-primario);
+    border-radius: 5px !important;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    padding-top: 10px;
+    opacity: 1;
+    background-color: var(--color-secundario) !important;
+    height: 80px;
+    width: 100%;
+    z-index: var(--index-z-front);
+}
+
+.bg-cover-section1{
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: -80px;
+}
+
+#whois{
+
+    background-color: var(--color-primario);
+}
+
+.whois-cont{
+    width: 40%;
+}
+
+
+.btn-wlc{
+    background-color: var(--color-primario);
+}
+
+#nuestros{
+    background-color: white;
+}
+
+.img-proyect{
+    overflow: hidden;
+    z-index: var(--index-z-back);
+}
+
+svg{
+    fill: var(--color-primario);
+}
+
+.icon-svg{
+    width: 100px;
+    height: 100px;
+    fill: var(--color-primario);
+}
+
+.proyecto:hover{
+    scale: 1.1;
+}
+
+.proyecto{
+    width: auto;
+    height: 30vh;
+}
+
+#proyecto{
+    background-color:#4a4a4a; 
+}
+
+h1{
+    width: auto;
+    text-align: center;
+}
+
+.footer{
+    background-color: var(--color-secundario);
+    width: 100%;
+    height: 100px;
+    position: relative;
+    bottom: 16px;
+}
+
+
+@media screen and (max-width: 450px) {
+    .bg-cover-section1{
+        width: 100%;
+        height: 70vh;
+        background-image: url(../images/fondo-bienvenidos.jpg) !important;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: contain;
+
+    } 
+    #proyecto{
+        width: auto;
+        height: 30%;
+    }
+    ul{
+        background-color: var(--color-secundario);
+        color: white;
+    }
+    .whois-cont{
+        width: 60%;
+    }
+
+    nav{
+        font-size: 18px;
+    }
+
+
+    .navbar-brand{
+        margin: 0;
+    
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav-item:active{
+        background: var(--color-primario);
+        border-radius: 5px !important;
+    }    
+
+    .img-proyect{
+        overflow: visible;
+        z-index: var(--index-z-back);
+    }
+
+    .bg-cover-section1{
+        background-image: url(../images/fondo-bienvenidos.jpg) !important;
+
+    } 
+  } 
+
+
+  @media screen and (max-width: 1000px) {
+    .navbar{
+        justify-content: center !important;
+        gap: 20px !important;
+        
+    }
+    ul{
+        text-align: center;
+        background-color: var(--color-secundario);
+        color: white;
+    }
+  }
