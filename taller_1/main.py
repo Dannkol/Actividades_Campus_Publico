@@ -1,16 +1,24 @@
+
+""" 6. En sus propias palabras, qué son las funciones preconstruidas y proporcione 2 ejemplos.
+
+ Una función es una fórmula predefinida que realiza cálculos utilizando valores específicos en un orden particular. Una de las principales ventajas es que ahorran tiempo porque ya no es necesario que la escribas tú mismo.
+
+ Y las funciones numéricas más usadas:
+
+    * print() dibujar en pantalla
+
+    * sum() Suma la lista de números pasados como argumento.
+
+    * min() Determina el valor mínimo de una lista de números pasados como argumento.
+
+    * max() Determina el valor máximo de una lista de números pasados como argumento.
+
+    * range() Crea una lista aritmética de números según el valor pasado como argumento.
+
+    * str() Convierte un valor numérico en texto.
 """
-    5. Enumere 5 tipos de datos en Python y suministre un valor de ejemplo de cada uno.
-"""
 
-datoint = 1
-datopuntoflotante = 1.3
-datonumerocomplx = 1+2j
-datobool = False
-datostring1 = "Hola mundo"
+num1 = [1,2,3]
 
-
-print(f"tenemos dato int {type(datoint)} = {datoint}")
-print(f"tenemos dato floar {type(datopuntoflotante)} = {datopuntoflotante}")
-print(f"tenemos dato complejo {type(datonumerocomplx)} en este dato tenemos su parte real {datonumerocomplx.real} y su parte imaginaria {datonumerocomplx.imag} = {datonumerocomplx}")
-print(f'tenemos datos bool {type(datobool)} = {datobool}')
-print(f'tenemos datos string {type(datostring1)} = {datostring1}')
+print('Hola mundo desde print()')
+print(f"sum(num1) {num1} = {sum(num1)}")
