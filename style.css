@@ -13,7 +13,7 @@ body{
 main{
     position: relative;
     padding: 0 10%;
-    height: 1080px;
+    height: 1440px;
     background-image: url(./img/textura.jpg);
 }
 header{
@@ -60,7 +60,7 @@ header div h1{
 
 section{
     position: relative;
-    height: 110vh;
+    height: 1200px;
 
 }
 
