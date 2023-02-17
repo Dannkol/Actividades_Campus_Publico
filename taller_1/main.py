@@ -1,15 +1,15 @@
-"""
-8. Escriba un bloque cualquiera de código en Python en donde
-utilice 2 condicionales (if) anidados.
+""" 9. Construya un algoritmo en Python, que permita ingresar la
+información de un empleado e imprima el nombre, los
+apellidos y la antigüedad. Los datos que se deben solicitar
+son los siguientes:
+*Nombre * Teléfono *Año de ingreso a la empresa
+*Apellidos *Edad.
 """
 
-edad = 18
-conduce = False
+valores = {'Nombre': '', 'Tel': '', 'Año de ingreso': 0, 'Apellido': '', 'Edad' : ''}
 
-if edad >= 18:
-  if conduce == True:
-    print('aprobado la persona es mayor de edad y condice');
-  else:
-    print('es mayor de edad pero no puede conducir');
-else:
-  print('no cumple');
+for i in valores:
+  dato = input(f'Ingrese el valor para {i}: ')
+  valores[i] = dato
+
+print(f"Nombre del empleado es {valores['Nombre']} su telefono es {valores['Tel']} sus año de antiguedad son {2023-int(valores['Año de ingreso'])} su Apellido es {valores['Apellido']} su edad es {valores['Edad']}")
