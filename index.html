@@ -1,62 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!--Dejo la etiqueta style como demostracion-->
     <style>
-        .item1{
-            font-style: italic; /*font-style: esta propiedad define el estilo del texto.*/
-        }
-        .item2{
-            font-variant: small-caps; /*font-variant: la propiedad font-variant define la variante de la letra. Esta propiedad solo tiene dos variantes: normal y small caps*/
-        }
+      .padre {
+        height: 95vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+      }
 
-        .item3{
-            font-weight: 500; /*esta propiedad define el peso de la letra, es decir, cómo de delgada o gruesa se verá la tipografía.*/
-        }
+      th,
+      td {
+        border: 2px solid black;
+        text-align: center;
+      }
 
-        .item4{
-            font-size: 28px; /* esta propiedad define el tamaño de la fuente.*/
-        
-        }
-
-        .item5{
-            font-family: 'Courier New', Courier, monospace; /*esta propiedad representa la familia de la fuente, es decir, la tipografía que estamos usando en el elemento.*/
-        }
-
-        .item6{
-            font: caption; /* esta propiedad se usa como una abreviatura de todas las anteriores.*/
-        }
-
-        .item7{
-            text-transform:uppercase; /*esta propiedad controla el uso de mayúsculas en un texto.*/
-        }
-
-        .item8{
-            width: 30%;
-            text-align:justify; /*esta propiedad determina si el texto está a la derecha, a la izquierda, al centro o justificado en el espacio.*/
-        }
-
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 80%;
+      }
+      .titulo{
+        font-size: 30px;
+      }
     </style>
-</head>
-<body>
-    <div class="item1">text1</div>
-    <div class="item2">text2</div>
-    <div class="item3">text3</div>
-    <div class="item4">text4</div>
-    <div class="item5">text5</div>
-    <div class="item6">text6</div>
-    <div class="item7">text7</div> 
-    <div class="item8">
-        <p>
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-Asperiores dolores labore sapiente soluta deleniti totam. 
-Sit, iusto aliquid? Consectetur dignissimos, nesciunt 
-tempore magnam dolorem a nulla expedita accusamus porro quia?
-        </p>
+  </head>
+  <body>
+    <div class="padre">
+      <div class="hijo">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="6" class="titulo">Daniel Oswaldo Manosalva</th>
+            </tr>
+            <tr>
+              <th>Foto</th>
+              <th>skill</th>
+              <th>hobbis</th>
+              <th>Redes sociales</th>
+              <th>Gustos</th>
+              <th>Defectos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="5">
+                <img
+                  src="https://avatars.githubusercontent.com/u/105187370?v=4"
+                  alt="foto"
+                />
+              </td>
+              <td>Javascript</td>
+              <td>Video juegos</td>
+              <td rowspan="3">Facebook</td>
+              <td>Bajitas y morenas</td>
+              <td rowspan="4">Ninguno</td>
+            </tr>
+            <tr>
+              <td>Comprension lectora</td>
+              <td>Leer</td>
+              <td rowspan="2">Azul</td>
+            </tr>
+            <tr>
+              <td>Habilidades sociales</td>
+              <td>Caminatas largas</td>
+            </tr>
+            <tr>
+              <td>Cocina</td>
+              <td>Musica</td>
+              <td>Twitter</td>
+              <td rowspan="2">Cerveza</td>
+            </tr>
+            <tr>
+              <td>Autodidacta</td>
+              <td>Comer</td>
+              <td>Instagram</td>
+              <td>Frontend</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="7">El exito</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </div>
-</body>
+  </body>
 </html>
