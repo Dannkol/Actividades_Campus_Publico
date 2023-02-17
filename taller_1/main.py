@@ -1,15 +1,19 @@
-""" 9. Construya un algoritmo en Python, que permita ingresar la
-información de un empleado e imprima el nombre, los
-apellidos y la antigüedad. Los datos que se deben solicitar
-son los siguientes:
-*Nombre * Teléfono *Año de ingreso a la empresa
-*Apellidos *Edad.
+
+""" 10. En su casa le solicitan que realice un algoritmo en Python,
+que permita calcular el valor a pagar por concepto de
+energía eléctrica. Los datos que se conocen son los
+siguientes:
+  - Mes de consumo 
+  - Valor kw
+  -Total kw consumido en el mes 
+  - estrato
 """
 
-valores = {'Nombre': '', 'Tel': '', 'Año de ingreso': 0, 'Apellido': '', 'Edad' : ''}
+mes = 'Enero'
+valorkw = [233.58, 291.98, 496.37, 583.97 , 700.76 , 700.76]
+totalkwcons = 152
+estrato = 2
 
-for i in valores:
-  dato = input(f'Ingrese el valor para {i}: ')
-  valores[i] = dato
+print(f'su estrato es {estrato} por ende el valor wk cuesta {valorkw[estrato-1]}')
 
-print(f"Nombre del empleado es {valores['Nombre']} su telefono es {valores['Tel']} sus año de antiguedad son {2023-int(valores['Año de ingreso'])} su Apellido es {valores['Apellido']} su edad es {valores['Edad']}")
+print(f'su total a pagar en el mes de {mes} es {valorkw[estrato-1] * totalkwcons } por un consumo total del mes {totalkwcons}')
