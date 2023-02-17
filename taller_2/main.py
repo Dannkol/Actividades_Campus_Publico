@@ -1,136 +1,123 @@
-almacen = {
-  'pepe': {
-    'arroz': [
-      12,
-      1000
-    ],
-    'arroz2': [
-      10,
-      800
-    ],
-    'arroz3': [
-      9,
-      4000
-    ],
-    'arroz4': [
-      5,
-      2000
-    ],
-    'arroz5': [
-      12,
-      5000
-    ]
-  },
-  'juan': {
-    'arroz': [
-      12,
-      6000
-    ],
-    'arroz2': [
-      20,
-      10
-    ],
-    'arroz3': [
-      9,
-      4000
-    ],
-    'arroz4': [
-      5,
-      2000
-    ],
-    'arroz5': [
-      12,
-      5000
-    ]
-  },
-  'oi': {
-    '2': [
-      2,
-      2
-    ],
-    '4': [
-      2,
-      2
-    ],
-    '5': [
-      2,
-      2
-    ],
-    '6': [
-      2,
-      2
-    ],
-    '7': [
-      4,
-      8
-    ]
-  }
-}
+artemis = []
+sputnik = []
 
+art_spu = False
+art_act = False
 
+msg = ""
 
-n = int(input("Cuantos amacenes creara?: "))
+while True:
+    def opt(opcion, art_act , art_spu , msg):
+        msg = ""
+        # Artemis
+        if opcion == 1:
+           msg = "Grupo Artemis creado"
+        elif opcion == 1.1 and art_act:
+            msg = "---------Lista de Artemis----------"
+            for i in range(len(artemis)):
+                msg += f"""
+                    {i+1}. Camper: {artemis[i]}
+                    """
+        elif opcion == 1.2 and art_act:
+            for i in range(len(artemis)):
+                print(f"{i+1}. Camper: {artemis[i]}")
+            artemis.append(input("argrega nombre del nuevo estudiante: "))
+            msg = "camper agregado"
 
-p= {
-    
-}
-
-
-for i in range(n):
-    nombre = input("nombre del almacen: ")
-    for y in almacen:
-        aux1 = True
-        while aux1:
-            if nombre in y:
-                nombre = input("nombre de almacen repetido, por favor cambie: ")
-            else:
-                aux1 = False        
-    item = []
-    for j in range(5):
-        items = []
-        producto = input("nombre del producto: ")
-        for y in item:
-            aux1 = True
-            while aux1:
-                if producto in y:
-                    producto = input("producto repetido, por favor cambie: ")
+        elif opcion == 1.3 and art_act:
+            for i in range(len(artemis)):
+                print(f"{i+1}. Camper: {artemis[i]}")
+            artemis.pop(int(input("introdusca el indice el camper a eliminar: "))-1)
+            return "camper eliminado"
+        elif opcion == 1.4 and art_act:
+            print("Lista de campers de artemis ordenada alfabeticamente: ")
+            artemis.sort()
+            msg = "-----lista ordenada camper artemis-----"
+            for i in range(len(artemis)):
+                msg = f"""
+                    {i}. Camper: {artemis[i]}
+                """
+        elif opcion == 1.3 and art_act:
+            busca = input("nombre del camper a buscar: ")
+            for dato in range(len(artemis)):
+                if artemis[dato] == busca:
+                     msg = f"""
+                        indice {dato + 1} : {artemis[dato]}
+                     """
                 else:
-                    aux1 = False
-        items.append(int(input("cantidad vendida: ")))
-        items.append(int(input("precio por unidad: ")))
-        item.append({producto:items})
-    for k in item:
-        for x in k:
-            p[x] = k[x]
-    almacen[nombre] = p 
+                    msg = "no se encontro nada"
+            
+        # Spunitk
+        if opcion == 2:
+            msg = "Grupo Sputnik creado"
+        elif opcion == 2.1 and art_spu:
+            msg = "---------Lista de Soutnik----------"
+            for i in range(len(sputnik)):
+                msg += f"""
+                    {i+1}. Camper: {sputnik[i]}
+                    """
+        elif opcion == 2.2 and art_spu:
+            for i in range(len(sputnik)):
+                print(f"{i+1}. Camper: {sputnik[i]}")
+            sputnik.append(input("argrega nombre del nuevo estudiante: "))
+            msg = "camper agregado"
 
+        elif opcion == 2.3 and art_spu:
+            for i in range(len(sputnik)):
+                print(f"{i+1}. Camper: {sputnik[i]}")
+            sputnik.pop(int(input("introdusca el indice el camper a eliminar: "))-1)
+            msg = "camper eliminado"
 
-print(almacen)
+        elif opcion == 2.4 and art_spu:
+            print("Lista de campers de artemis ordenada alfabeticamente: ")
+            sputnik.sort()
+            msg = "-------lista organizada sputnik-------"
+            for i in range(len(sputnik)):
+                msg += f"""
+                    {i}. Camper: {sputnik[i]}
+                """
+            
+        elif opcion == 2.3 and art_spu:
+            busca = input("nombre del camper a buscar: ")
+            for dato in range(len(sputnik)):
+                if sputnik[dato] == busca:
+                    msg = f"indice {dato + 1} : {sputnik[dato]}"
+                else:
+                    msg = ("no se encontro nada")
+        return msg
 
-maxvengen = []
-maxven = []
-
-for item in almacen:
-    maxvengen.append([almacen[item][max(almacen[item].items(), key=lambda x: x[1])[0]][0], max(almacen[item].items(), key=lambda x: x[1])[0] ])
     print(f"""
-        Almacen: {item}
-        Articulo mas vendido: {max(almacen[item].items(), key=lambda x: x[1])[0]}
-        Unidades vendidas de ese articulo: {almacen[item][max(almacen[item].items(), key=lambda x: x[1])[0]][0]}
-        Precio por unidad {almacen[item][max(almacen[item].items(), key=lambda x: x[1])[0]][1]}
-        
-    """)
+        --------------------------MENU-----------------------------
+        1. CREAR GRUPO ARTEMIS:
+        1.1 LISTAR CAMPERS DE ARTEMIS 
+        1.2 AGREGAR CAMPERS A ARTEMIS
+        1.3 ELIMINAR CAMPERS DE ARTEMIS
+        1.4 ORDENAR ALFABETICAMENTE EN LISTA DE ARTEMIS
+        1.5 BUSCAR CAMPER EN LISTA DE ARTEMIS
+        2. CREAR GRUPO SPUTNIK:
+        2.1 LISTAR CAMPERS DE SPUTNIK:
+        2.2 AGREGAR CAMPERS A SPUTNIK   
+        2.3 ELIMINAR CAMPERS DE SPUTNIK
+        2.4 ORDENAR ALFABETICAMENTE EN LISTA DE SPUTNIK
+        2.5 BUSCAR CAMPER EN LISTA DE SPUTNIK
 
+        {msg}
+        """)
+    opcion = float(input("Digite opcion: "))
 
-
-for item in almacen:
-    aux = 0
-    for valor in almacen[item]:
-        aux += almacen[item][valor][0]*almacen[item][valor][1]
-    maxven.append([aux , item])    
-
-
-
-print(f"""
-    El alamcen que mas vendio fue {max(maxven)[1]} con un total de {max(maxven)[0]}
-    El producto mas vendido en general es {max(maxvengen)[1]} con un total de {max(maxvengen)[0]} unidades vendidas
-    """)
+    if opcion <= 1.5:
+        if opcion == 1:
+            art_act = True
+            msg = opt(opcion, art_act, art_spu, msg)
+        elif art_act:
+            msg = opt(opcion, art_act , art_spu, msg)
+        else:
+            msg = "No a creado la lista de Artemis" 
+    elif opcion <= 2.5:
+        if opcion == 2:
+            art_spu = True
+            msg = opt(opcion, art_act, art_spu, msg)
+        elif art_spu:
+            msg = opt(opcion, art_act , art_spu, msg)
+        else:
+            msg = "No a creado la lista de Sputnik" 
