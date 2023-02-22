@@ -31,12 +31,14 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse flex-grow-0" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Cart</a>
+                <a class="nav-link" href="#" id="cart">
+                  Car
+                </a>
               </li>
               <li class="nav-item">
                 <a
@@ -52,6 +54,23 @@
         </div>
       </nav>
     </header>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Car Shop</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <main>
       <div class="container my-4">
@@ -59,7 +78,7 @@
           <div class="col">
             <div class="p-3 bg-light">
               <img
-                class="img-fluid"
+                class="img-fluid  product-img"
                 src="https://falabella.scene7.com/is/image/FalabellaCO/1745210_1?wid=800&hei=800&qlt=70"
                 alt="Producto"
               />
@@ -69,7 +88,7 @@
             <div class="p-2 bg-light h-75">
               <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-around  align-items-center ">
-                  <h5 class="card-title">title Porducto</h5>
+                  <h5 class="card-title product-title">Cicla</h5>
                   <div class="overflow-auto h-50">
                     <p>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -119,7 +138,7 @@
                         </div>
                       </div>
                     </div>
-                    <button type="button" class="mx-3 btn btn-light">Buy</button>
+                    <button type="button" class="mx-3 btn btn-light" onclick="buy()">Buy</button>
                   </div>
                 </div>
               </div>
@@ -210,5 +229,22 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const modalbody = document.querySelector('.modal-body')
+      const cart = document.querySelector('#cart')
+      const title = document.querySelector('.product-title')
+
+      let aux = 0
+      const buy = () =>{
+        aux++
+        const modal = '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">'+aux+' items</button>'
+        cart.innerHTML =  modal
+
+        let newdiv = document.createElement('div')
+
+        modalbody.innerHTML = '<spam>'+aux+' </spam>'+title.textContent
+      }
+    </script>
   </body>
 </html>
