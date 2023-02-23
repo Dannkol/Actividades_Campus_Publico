@@ -30,15 +30,16 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse flex-grow-0" id="navbarTogglerDemo02">
+          <div
+            class="collapse navbar-collapse flex-grow-0"
+            id="navbarTogglerDemo02"
+          >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="cart">
-                  Car
-                </a>
+                <a class="nav-link" href="#" id="cart"> Car </a>
               </li>
               <li class="nav-item">
                 <a
@@ -55,18 +56,41 @@
       </nav>
     </header>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Car Shop</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
+          <div class="modal-body overflow-auto" style="height: 400px"></div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              onclick="clearall()"
+            >
+              Clear
+            </button>
+            <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
           </div>
         </div>
       </div>
@@ -78,7 +102,7 @@
           <div class="col">
             <div class="p-3 bg-light">
               <img
-                class="img-fluid  product-img"
+                class="img-fluid product-img"
                 src="https://falabella.scene7.com/is/image/FalabellaCO/1745210_1?wid=800&hei=800&qlt=70"
                 alt="Producto"
               />
@@ -87,7 +111,9 @@
           <div class="col">
             <div class="p-2 bg-light h-75">
               <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-around  align-items-center ">
+                <div
+                  class="card-body d-flex flex-column justify-content-around align-items-center"
+                >
                   <h5 class="card-title product-title">Cicla</h5>
                   <div class="overflow-auto h-50">
                     <p>
@@ -105,12 +131,12 @@
                       aliquid.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Repellendus quis deserunt quo officia minima architecto,
-                        molestiae at esse nobis reprehenderit, explicabo sequi.
-                        Nobis, harum! Corrupti odio asperiores ipsa ratione
-                        aliquid.
-                      </p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Repellendus quis deserunt quo officia minima architecto,
+                      molestiae at esse nobis reprehenderit, explicabo sequi.
+                      Nobis, harum! Corrupti odio asperiores ipsa ratione
+                      aliquid.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -121,24 +147,63 @@
                   <div
                     class="my-10 container-fluid d-flex align-content-center justify-content-between align-items-center"
                   >
-                    <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-1 w-100">
-                      <div class="col">
-                        <div class="bg-light text-center w-50">
-                            <samp>XL</samp>
+                    <div
+                      class="row row-cols-1 row-cols-lg-3 row-cols-sm-1 w-100"
+                    >
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic radio toggle button group"
+                      >
+                        <div class="col">
+                          <input
+                            type="radio"
+                            class="btn-check"
+                            name="btnradio"
+                            id="btnradio1"
+                            autocomplete="off"
+                            data-name="XL"
+                          />
+                          <label class="btn btn-outline-primary" for="btnradio1"
+                            >XL</label
+                          >
                         </div>
-                      </div>
-                      <div class="col">
-                        <div class="bg-light text-center w-50">
-                            <samp>X</samp>
+                        <div class="col">
+                          <input
+                            type="radio"
+                            class="btn-check"
+                            name="btnradio"
+                            id="btnradio2"
+                            autocomplete="off"
+                            data-name="X"
+                            checked
+                          />
+                          <label class="btn btn-outline-primary" for="btnradio2"
+                            >X</label
+                          >
                         </div>
-                      </div>
-                      <div class="col">
-                        <div class="bg-light text-center w-50">
-                            <samp>L</samp>
+                        <div class="col">
+                          <input
+                            type="radio"
+                            class="btn-check"
+                            name="btnradio"
+                            id="btnradio3"
+                            autocomplete="off"
+                            data-name="L"
+                          />
+                          <label class="btn btn-outline-primary" for="btnradio3"
+                            >L</label
+                          >
                         </div>
                       </div>
                     </div>
-                    <button type="button" class="mx-3 btn btn-light" onclick="buy()">Buy</button>
+                    <button
+                      type="button"
+                      class="mx-3 btn btn-light"
+                      onclick="buy()"
+                    >
+                      Buy
+                    </button>
                   </div>
                 </div>
               </div>
@@ -150,7 +215,7 @@
 
     <footer>
       <div class="container-fluid">
-        <div class="row ">
+        <div class="row">
           <div class="p-3 bg-light w-100">
             <div class="card">
               <div class="card-body">
@@ -231,20 +296,79 @@
     ></script>
 
     <script>
-      const modalbody = document.querySelector('.modal-body')
-      const cart = document.querySelector('#cart')
-      const title = document.querySelector('.product-title')
+      const modalbody = document.querySelector(".modal-body");
+      const cart = document.querySelector("#cart");
+      const title = document.querySelector(".product-title");
 
-      let aux = 0
-      const buy = () =>{
-        aux++
-        const modal = '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">'+aux+' items</button>'
-        cart.innerHTML =  modal
+      let sizecicla = "x";
+      let aux = 0;
+      let auxlocal = localStorage.length;
+      console.log(localStorage);
 
-        let newdiv = document.createElement('div')
+      const draw = () => {
+        auxlocal = localStorage.length;
+        cart.innerHTML = "";
+        modalbody.innerHTML = "";
+        let modal =
+          '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">' +
+          auxlocal +
+          " items</button>";
+        cart.innerHTML = modal;
+        for (let i = 0; i < localStorage.length; i++) {
+          let key = localStorage.key(i);
+          let newdiv = document.createElement("div");
+          newdiv.innerHTML =
+            "<spam>" +
+            localStorage.getItem(key) +
+            `</spam> <button type="button" class="btn btn-secondary my-4" onclick="remove('${key}')" data-bs-toggle="modal" data-bs-target="#exampleModal">remove</button>`;
 
-        modalbody.innerHTML = '<spam>'+aux+' </spam>'+title.textContent
+          modalbody.appendChild(newdiv);
+        }
+      };
+
+      function size(size) {
+        console.log(this);
+        sizecicla = size;
+        return sizecicla;
       }
+
+      const buy = () => {
+        const check = document.querySelectorAll(".btn-check");
+
+        check.forEach((data) => {
+          if (data.checked) {
+            aux++;
+
+            if (!localStorage.getItem(`Producto${aux}`)) {
+              console.log("no extiste");
+              localStorage.setItem(
+                `Producto${aux}`,
+                `${title.textContent} talla: ${data.dataset.name}`
+              );
+            } else {
+              aux++;
+              console.log("extiste: " + aux);
+              localStorage.setItem(
+                `Producto${aux}`,
+                `${title.textContent} talla: ${data.dataset.name}`
+              );
+            }
+            draw();
+          }
+        });
+      };
+
+      const clearall = () =>{
+        localStorage.clear()
+        draw()
+      }
+
+      const remove = (product) => {
+        localStorage.removeItem(product);
+        draw();
+      };
+
+      window.onload = (onload) => draw();
     </script>
   </body>
 </html>
