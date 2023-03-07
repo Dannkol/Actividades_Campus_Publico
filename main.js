@@ -3,12 +3,12 @@ console.log(`
 
     Metodos de strings en javascript
 
-    El método indexOf(), dado un argumento: una subcadena para buscar, busca en toda la cadena de llamada y devuelve el índice de la primera aparición de la subcadena especificada.
-
+    El método search() ejecuta una búsqueda que encaje entre una expresión regular y el objeto String desde el que se llama.
+    
     para la cadena: ${cadena} 
     
-    su .charCodeAt(index) en la poscion 0 es
+    su .search(regex) para la regex /Lorem/i
 
-    ${cadena.charCodeAt(0)}
+    ${cadena.search(/Lorem/i)}
 
 `)
