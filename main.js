@@ -3,7 +3,7 @@ console.log(`
 
     Metodos de strings en javascript
 
-    El método charCodeAt() devuelve un número entero entre 0 y 65535 que representa la unidad de código UTF-16 en el índice dado.
+    El método indexOf(), dado un argumento: una subcadena para buscar, busca en toda la cadena de llamada y devuelve el índice de la primera aparición de la subcadena especificada.
 
     para la cadena: ${cadena} 
     
