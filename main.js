@@ -13,7 +13,7 @@ const notas = {
     [3, 5],
     [1, 2],
   ],
-  Letter: ["A", "B", "C", "D", "E", "Z"],
+  Letter: ["A", "B", "C", "D", "E", "F"],
 };
 
 console.table(notas);
@@ -27,16 +27,28 @@ function errors(msg) {
   window.location.reload();
 }
 
+function ordenar(val) {
+  try {
+    val = val
+      .map((data) => data.sort())
+      .join(",")
+      .split(",")
+      .sort((a, b) => a - b);
+    return `desde ${val[0]} hasta ${val[val.length - 1]}`;
+  } catch (error) {
+    val = val.sort();
+    return `desde ${val[0]} hasta ${val[val.length - 1]}`;
+  }
+}
+
 let notaest = prompt(
   `Escribe la nota del estudiantes ${
     tipo == 1
-      ? notas.Tradicional.map((data) => data.join().replace(",", " - ")).join(
-          " , "
-        )
+      ? ordenar(notas.Tradicional)
       : tipo == 2
-      ? notas.Point
+      ? ordenar(notas.Point)
       : tipo == 3
-      ? notas.Letter
+      ? ordenar(notas.Letter)
       : errors("Tipo de nota no encontrada")
   }`
 );
@@ -44,25 +56,25 @@ let notaest = prompt(
 tipo = parseInt(tipo);
 
 function Numeroentre(numeroinicio, numerofinal, numero) {
-  return numero >= numeroinicio && numero <= numerofinal ? true : false;
+  return numero >= numeroinicio && numero <= numerofinal;
 }
 
 function Notaensbg(index) {
   switch (index) {
     case 0:
-      return "Nota en sbg es 4, El estudiante consige una beca para el siguiente semestre";
+      return "Nota en sbg es 5, El estudiante consige una beca para el siguiente semestre";
       break;
     case 1:
-      return "Nota en sbg es 3, El estudiante es axectable";
+      return "Nota en sbg es 4, El estudiante es axectable";
       break;
     case 2:
-      return "Nota en sbg es 2, El estudiante queda en condicional";
+      return "Nota en sbg es 3, El estudiante queda en condicional";
       break;
     case 3:
-      return "Nota en sbg es 1, El estudiante es desendido";
+      return "Nota en sbg es 2, El estudiante es desendido";
       break;
     case 4:
-      return "Nota en sbg es 0, El estudiante es suspendido";
+      return "Nota en sbg es 1, El estudiante es suspendido";
       break;
     default:
       return "Nota en sbg es 0, El estudiante queda PFC";
@@ -91,14 +103,14 @@ const Letter = (nota) => {
 switch (tipo) {
   case 1:
     notaest = parseInt(notaest);
-    console.log(calular(notas.Tradicional));
+    alert(calular(notas.Tradicional));
     break;
   case 2:
     notaest = parseInt(notaest);
-    console.log(calular(notas.Point));
+    alert(calular(notas.Point));
     break;
   case 3:
-    console.log(Letter(notas.Letter));
+    alert(Letter(notas.Letter));
   default:
     break;
 }
