@@ -1,68 +1,26 @@
 console.log(
     `
 
-    los operadores aritmeticos son : 
+    los metodos numericos son : 
 
-        operadores aritméticos binarios son:
+        .toExponential() -> El método toExponential() devuelve una cadena que representa el objeto Número en notación exponencial.
+            
+            * para el numero 77.1234 su notacion cientifica con 2 decimales serios 77.1234.toExponential(2) es ${77.1234.toExponential(2)}
         
-            * Operador suma: +.
-            * Operador resta: -.
-            * Operador producto: * (¡ojo! Utilizamos el asterisco y no la x).
-            * Operador división: /.
-            * Operador módulo o resto: % (¡cuidado! En programación no utilizamos el % para operaciones con porcentajes).
-            * Operador de exponenciación **.
+        .toFixed(dec) -> El método toFixed() formatea un número usando notación de punto fijo.
+
+            * para el numero 1234.252 su formato con 1 decima serio 1234.252.toFixed(1), tambien aproxima = ${1234.252.toFixed(1)}
+    
+        .toPrecision(p) -> El método toPrecision() devuelve una cadena que representa un objeto Number según la precisión especificada.
+            
+            * para un numero 12.25 si usamos .toPrecision(2) solo nos devolvera los dos primeros caracteres el numero ${12.25.toPrecision(2)}
         
-            operadores aritméticos unarios son:
+        .parseInt(str,base) -> Convierte (parsea) un argumento de tipo cadena y devuelve un entero de la base especificada.
 
-                * Operador incremento: ++.
-                * Operador decremento: --.
+            * por predeterminado esta en base 10 por eso si pornemos parseInt("15"); daria ${parseInt("15")} pero si ponemos parseInt("FXX123", 16) tenemos es epacificar que es en base 16 o hexadecimal para que lo parcee a ${parseInt("FXX123", 16)};
 
-        operadores de comparación son:
+        .parseFloat(str, base) -> La función parseFloat() analiza un argumento de cadena y devuelve un número de punto flotante.
 
-            * Mayor que > .
-            * Menor que <.
-            * Mayor e igual que <=.
-            * Menor e igual que >=.
-            * No es igual que !=.
-            * Estrictamente igual que ===.
-            * Igual que ==.
-            * Desigualdad estricta !==.
-        
-        operadores lógicos son:
-
-
-            * AND && : devuelve true (cierto) si los dos operandos son verdaderos.
-            * OR || : devuelve true (cierto) si al menos un operador es verdadero.
-            * NOT ! : solo se aplica a un operando. Devuelve true (cierto) si su operando es falso y false (falso) si su operando es cierto.
-
-            Operadores bit a bit:
-                
-                * AND a nivel de bits   a & b 
-                * OR a nivel de bits 	a | b
-                * XOR a nivel de bits   a ^ b
-                * NOT a nivel de bits   ~ a
-
-
-        Operadores de asignación:
-
-            * Asignación x = y.
-            * Asignación de adición x += y.
-            * Asignación de resta x -= y.
-            * Asignación de multiplicación x *= y.
-            * Asignación de división x /= y.
-            * Asignación de residuo x %= y.
-            * Asignación de exponenciación x **= y.
-            * Asignación de desplazamiento a la izquierda 	x <<= y  significa	x = x << y
-            * Asignación de desplazamiento a la derecha 	x >>= y  significa	x = x >> y
-            * Asignación de desplazamiento a la derecha sin signo 	x >>>= y  significa	x = x >>> y
-            * Asignación AND lógico 	        x &&= y   significa   x && (x = y)
-            * Asignación OR lógico 	            x ||= y   significa   x || (x = y)
-            * Asignación de anulación lógica 	x ??= y   significa	  x ?? (x = y)
-        
-
-        Operador condicional (ternario) es:
-
-            * condition ? val1 : val2 -> El operador puede tener uno de dos valores según una condición val1 si es true y val2 si es false. 
-
+            * al igual que el parseInt() por defecto esta en base 10 entonces parseFloat("15.2") nos devuelve ${parseFloat("15.2")}
     `
 )
