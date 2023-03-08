@@ -1,23 +1,27 @@
-const cadena = String.raw = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+const cadena = String.raw = 'Lorem ipsum dolor sit Amet consectetur adipisicing elit.'
 console.log(`
 
     Metodos de strings en javascript
 
-    El método localeCompare() compara dos cadenas en la configuración regional actual.
-
-    El método localeCompare() devuelve el orden de clasificación -1, 1 o 0 (para antes, después o igual).
-
-    -1 si se ordena antes
-    1 si se ordena después
-    0 si es igual
-
-    El método localeCompare() retorna un número indicando si una cadena de carateres de referencia va antes, después o si es la misma que la cadena dada en orden alfabético.
-
-    La letra "a" va antes que "c" por lo que entrega un valor negativo
+    El método match() devuelve todas las ocurrencias de una expresión regular dentro de una cadena.
     
-    'a'.localeCompare('c')
+    El método matchAll() retorna un iterador de todos los resultados de ocurrencia en una cadena de texto contra una expresión regular, incluyendo grupos de captura.
 
-    ${'a'.localeCompare('c')}
+    para la cadena de texto
+    
+    ${cadena}
+
+    .match(/[A-Z]/g) -> me encontra todas las ocurrencias en el string que concidan con la exprecion regular
+    en este caso de la A a la Z (mayusculas)
+
+    ${cadena.match(/[A-Z]/g)}
+
+    .matchAll(/[A-Z]/g) -> devolvera un obajeto iterable [object RegExp String Iterator]
+
+    [...cadena.matchAll(/[A-Z]/g)]
+
+    ${[...cadena.matchAll(/[A-Z]/g)][0]}
+
 
 `)
 
