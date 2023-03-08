@@ -1,13 +1,13 @@
 const cadena = String.raw = 'Lorem ipsum dolor sit Amet consectetur adipisicing elit.'
 console.log(`
 
-    El método replace() devuelve una nueva cadena con una, algunas o todas las coincidencias de un patrón reemplazadas por un reemplazo.    
+    El método slice() devuelve una copia de una parte del array dentro de un nuevo array comenzando por inicio hasta fin (fin no incluido). El arreglo original no se modificará.
 
     ${cadena}
 
-    .replace('Lorem' , 'Daniel') -> remplaza Lorem por Daniel, igual funciona con expreciones regulares 
+    .slice(0 , 6) ->  me trae los primeros 6 caracteres
 
-    ${cadena.replace('Lorem' , 'Daniel')}
+    ${cadena.slice(0 , 6)}
 
 `)
 
