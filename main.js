@@ -1,13 +1,13 @@
 const cadena = String.raw = 'Lorem ipsum dolor sit Amet consectetur adipisicing elit.'
 console.log(`
 
-    El método repeat() construye y devuelve una nueva cadena que contiene el número especificado de copias de la cadena en la cual fue llamada, concatenados.
-    
+    El método replace() devuelve una nueva cadena con una, algunas o todas las coincidencias de un patrón reemplazadas por un reemplazo.    
+
     ${cadena}
 
-    .repeat(2) -> repite el string las veces del num en este caso 2 
+    .replace('Lorem' , 'Daniel') -> remplaza Lorem por Daniel, igual funciona con expreciones regulares 
 
-    ${cadena.repeat(2)}
+    ${cadena.replace('Lorem' , 'Daniel')}
 
 `)
 
