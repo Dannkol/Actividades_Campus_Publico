@@ -1,22 +1,19 @@
-let num = 0;
+let res = 0;
+let int = 0;
 
 do {
   try {
-    num = parseInt(
-      prompt("ingrese un numero para saber si es par o impar y es mayor a 10")
-    );
+    res = parseFloat(prompt("ingrese la resistencia del circuito en ohm"));
+    int = parseFloat(prompt("ingrese la corriente del circuito en ampers A"));
   } catch (error) {
     alert(`Dato no conocido : ${error}`);
   }
 
   alert(
-    `${num % 2 == 0 ? "El numbre es par" : "El numero no es par"} y ${
-      num > 10 ? "el numero es mayor a 10" : "el numero es menor a 10"
-    }`
+    `El voltaje del circuito es ${res * int}`
   );
 
-    if(!confirm("¿Desea Continuar?")){
-      break
-    }
-
+  if (!confirm("¿Desea Continuar?")) {
+    break;
+  }
 } while (true);
