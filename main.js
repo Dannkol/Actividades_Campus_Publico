@@ -1,26 +1,42 @@
 console.log(
     `
 
-    los metodos numericos son : 
+    los metodos de Math son : 
 
-        .toExponential() -> El método toExponential() devuelve una cadena que representa el objeto Número en notación exponencial.
-            
-            * para el numero 77.1234 su notacion cientifica con 2 decimales serios 77.1234.toExponential(2) es ${77.1234.toExponential(2)}
+        * .abs(x) -> Me trae el valor absoluto de un numero por ejemplo el valor absoluto de -12 es ${Math.abs(-12)}
         
-        .toFixed(dec) -> El método toFixed() formatea un número usando notación de punto fijo.
+        * .exp(x) -> Me Devuelve el exponente de un numero por ejemplo e^x entonces euler elvado a la 2 es igual a ${Math.exp(2)}
 
-            * para el numero 1234.252 su formato con 1 decima serio 1234.252.toFixed(1), tambien aproxima = ${1234.252.toFixed(1)}
+        * .log(x) -> Devuelve el logaritmo natural en base e  ∀x > 0 , 𝙼𝚊𝚝𝚑.𝚕𝚘𝚐(𝚡) = ln(x)= El único y tal que e^(y) = x, entonces logaritmo natural de dos es ${Math.log(2)}
     
-        .toPrecision(p) -> El método toPrecision() devuelve una cadena que representa un objeto Number según la precisión especificada.
-            
-            * para un numero 12.25 si usamos .toPrecision(2) solo nos devolvera los dos primeros caracteres el numero ${12.25.toPrecision(2)}
+        * .max(x) y min(x) -> Devuelve el numero mayor o menor, entonces para [2,5,25,3] el numeor mayor es ${Math.max([2,5,25,3])} y su numero menor es ${Math.min([2,5,25,3])}
+
+        * .pow(base, exp) -> Devuelve el resultado de una base elevada un exp o sea x^y, entonces 2² es igual a ${Math.pow(2,2)}
+    
+        * .random() -> Numero flotante random, por ejemplo para obtener un numero random del 1 al 10 seria Math.floor(Math.random() * 10) = ${Math.floor(Math.random() * 11)}
         
-        .parseInt(str,base) -> Convierte (parsea) un argumento de tipo cadena y devuelve un entero de la base especificada.
+        Tmbien hay metos para redondear numero entre los mas usados esta
+            
+            * floor(x) -> Redondea al al inferio (no aproxima) entonces 5.94 es igual a ${Math.floor(5.94)} y su tipo es ${typeof(Math.floor(5.94))}
+            * ceil(x) -> Redondea al superior (si aproxima) entonces 5.94 es igual a ${Math.ceil(5.94)} y su tipo es ${typeof(Math.ceil(5.94))}
+            * round(x) -> Devuelve el valor de un número redondeado al entero más próximo entonces 5.5 es igual a ${Math.round(5.5)} y su tipo es ${typeof(Math.round(5.5))}
+            * trunc(x) -> Elimina los decimales (NO redondea el número) 5.94 es igual a ${Math.trunc(5.94)} y su tipo es ${typeof(Math.trunc(5.94))}
 
-            * por predeterminado esta en base 10 por eso si pornemos parseInt("15"); daria ${parseInt("15")} pero si ponemos parseInt("FXX123", 16) tenemos es epacificar que es en base 16 o hexadecimal para que lo parcee a ${parseInt("FXX123", 16)};
-
-        .parseFloat(str, base) -> La función parseFloat() analiza un argumento de cadena y devuelve un número de punto flotante.
-
-            * al igual que el parseInt() por defecto esta en base 10 entonces parseFloat("15.2") nos devuelve ${parseFloat("15.2")}
+        Operaciones trigonometricas
+        
+            Operacion   |   Descripción |   Inverso     |
+            --------------------------------------------|
+            acos(x)     |   Arcocoseno  |   acosh(x)    |
+            --------------------------------------------|
+            asin(x)     |   Arcoseno    |   asinh(x)    |
+            --------------------------------------------|
+            atan(x)     |   Arcocoseno  |   acosh(x)    |
+            --------------------------------------------|
+            cos(x)      |   coseno      |    cosh(x)    |
+            --------------------------------------------|
+            sin(x)      |   seno        |    sinh(x)    |    
+            --------------------------------------------|
+            tan(x)      |   tangente    |    tanh(x)    |
+            ---------------------------------------------
     `
 )
