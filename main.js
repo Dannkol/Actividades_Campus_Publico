@@ -1,21 +1,31 @@
-let num1 = 0;
-let num2 = 0;
+let estudiantes = {
+  resul: [],
+};
 
 do {
+  let nombre = prompt("nombre");
+  let sex = prompt("sexo del estudiante f o m").toLocaleLowerCase();
+  let age = parseInt(prompt("edad del estudiante"));
   try {
-    num1 = parseInt(prompt("ingrese numero 1"));
-    num2 = parseInt(prompt("ingrese numero 2"));
+    estudiantes.resul.push({ name: nombre, sexo: sex, edad: age });
   } catch (error) {
-    alert(`Dato no conocido : ${error}`);
+    alert(`Dato : ${error}`);
   }
-
-  alert(
-    num1 > num2 ? `su suma es ${num1 + num2} y su diferencia es ${num1 - num2}` : `Su producto es ${num1*num2} y su division es ${num1/num2}`
-  );
-  
 
   if (!confirm("¿Desea Continuar?")) {
     break;
   }
 } while (true);
 
+let maxval = Math.max(...estudiantes.resul.map((x) => parseInt(x.edad)));
+
+let valor = estudiantes.resul.filter((x) => x.edad == maxval);
+
+alert('persona o personas mayores son')
+
+for (let i = 0; i < valor.length; i++) {
+  alert(`nombre ${valor[i].name} y edad ${valor[i].edad}`);
+}
+
+
+alert(`la cantidad de mujeres es ${estudiantes.resul.filter(x => x.sexo == 'f').length}`)
