@@ -28,4 +28,5 @@ for (let i = 0; i < valor.length; i++) {
 }
 
 
+
 alert(`la cantidad de mujeres es ${estudiantes.resul.filter(x => x.sexo == 'f').length}`)
