@@ -1,32 +1,25 @@
-let estudiantes = {
-  resul: [],
+let produc = {
+  result: new Array(2),
 };
 
 do {
-  let nombre = prompt("nombre");
-  let sex = prompt("sexo del estudiante f o m").toLocaleLowerCase();
-  let age = parseInt(prompt("edad del estudiante"));
+  nombre = prompt("nombre del producto");
+  price = parseInt(prompt("precio del producto"));
+
   try {
-    estudiantes.resul.push({ name: nombre, sexo: sex, edad: age });
+    produc.result.push({
+      name: nombre,
+      price: price,
+    });
   } catch (error) {
-    alert(`Dato : ${error}`);
+    alert(error);
   }
 
-  if (!confirm("¿Desea Continuar?")) {
+  if (!confirm("agregar otro producto?")) {
     break;
   }
 } while (true);
 
-let maxval = Math.max(...estudiantes.resul.map((x) => parseInt(x.edad)));
+let valor = produc.result.reduce((a,b) => a.price += b.price)
 
-let valor = estudiantes.resul.filter((x) => x.edad == maxval);
-
-alert('persona o personas mayores son')
-
-for (let i = 0; i < valor.length; i++) {
-  alert(`nombre ${valor[i].name} y edad ${valor[i].edad}`);
-}
-
-
-
-alert(`la cantidad de mujeres es ${estudiantes.resul.filter(x => x.sexo == 'f').length}`)
+alert(`El valor de su factura es de $${valor}`);
