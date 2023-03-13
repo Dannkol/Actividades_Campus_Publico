@@ -1,34 +1,34 @@
-let option = prompt('a.perimetro de un cuadrado \n b.area de un ractangulo')
+let atleta = {
+  result: new Array(),
+};
 
-let cal = new Array(2)
+const record = 15.50
 
 do {
+  nombre = prompt("nombre de la atleta");
+  salto = parseFloat(prompt("salto en metros"));
 
   try {
-    switch (option) {
-        case 'a':
-            cal[0] = parseInt(prompt('lado en cm del cuadrado'))
-            alert(`el perimetro es ${cal[0]*4}`)
-            break;
-        
-        case 'b':
-            cal[0] = parseInt(prompt('altura en cm'))
-            cal[1] = parseInt(prompt('base en cm'))
-            alert(`el area es ${cal.reduce((acc, ecc) => acc*ecc)}`)
-            break
-        default:
-            break;
-    }
+    atleta.result.push({
+      name: nombre,
+      salto: salto,
+    });
   } catch (error) {
     alert(error);
   }
 
-  if (!confirm("seguir?")) {
+  if (!confirm("agregar otra atleta?")) {
     break;
   }
-  option = prompt('a.perimetro de un cuadrado \n b.area de un ractangulo')
 } while (true);
 
-let valor = produc.result.reduce((a,b) => a.price += b.price)
+let maxval = Math.max(...atleta.result.map((x) =>x.salto));
+let valor = atleta.result.filter((x) => x.salto == maxval);
+alert('Las o la atleta que mayor es o son')
+for (let i = 0; i < valor.length; i++) {
+    if(valor.salto > record){
+        alert(`nombre ${valor[i].name}, con un salto de ${valor[0].salto} rompio el record y gana 500 millones`);
+    }
+    alert(`nombre ${valor[i].name}, con un salto de ${valor[0].salto}`);
+}
 
-alert(`El valor de su factura es de $${valor}`);
