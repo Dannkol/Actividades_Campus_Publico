@@ -1,34 +1,30 @@
-let atleta = {
-  result: new Array(),
-};
-
-const record = 15.50
+let num = new Array();
+let acc = 1
 
 do {
-  nombre = prompt("nombre de la atleta");
-  salto = parseFloat(prompt("salto en metros"));
+    acc = parseInt(prompt('ingrese un numero par agg o 0 para terminar'))
 
-  try {
-    atleta.result.push({
-      name: nombre,
-      salto: salto,
-    });
-  } catch (error) {
-    alert(error);
-  }
+    try {
+        if (acc > 0) {
+            num.push(acc);
+        } else {
+            break
+        }
+    } catch (error) {
+        alert(error);
+    }
 
-  if (!confirm("agregar otra atleta?")) {
-    break;
-  }
 } while (true);
 
-let maxval = Math.max(...atleta.result.map((x) =>x.salto));
-let valor = atleta.result.filter((x) => x.salto == maxval);
-alert('Las o la atleta que mayor es o son')
-for (let i = 0; i < valor.length; i++) {
-    if(valor.salto > record){
-        alert(`nombre ${valor[i].name}, con un salto de ${valor[0].salto} rompio el record y gana 500 millones`);
-    }
-    alert(`nombre ${valor[i].name}, con un salto de ${valor[0].salto}`);
-}
+let maxval = Math.max(...num);
+let minval = Math.min(...num);
+let sumtotal = num.reduce((pre, cur) => pre += cur)
+let total = num.length;
+let promt = sumtotal / total;
+alert(`
+        El promedio es: ${promt.toFixed(2)}
+        \nEl total de valores agregados son ${total}
+        \nEl total de la suma de los valores es ${sumtotal}
+        \nEl mayor valor es ${maxval}
+        \nEl menor valor es ${minval}`)
 
