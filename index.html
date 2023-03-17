@@ -1,30 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="main.js" defer></script>
-</head>
-<body>
-    <fieldset>
-        <legend>Datos de contacto de las sedes de CAMPUS:</legend>
-        <form id="myFormularioCampus">
-            <input type="text" name="nombreSede" placeholder="Nombre de la sedes"><br><br>
-            <input type="submit" value="Guardar">
-        </form>
-    </fieldset>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="card">
+        <div class="card-body">
+          <fieldset>
+            <legend class="card-title">Datos de las sedes de CAMPUS:</legend>
+            <form id="myFormularioCampus">
+              <input
+                type="text"
+                name="nombreSede"
+                placeholder="Nombre de la sedes"
+              /><br /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
 
+    <div id="datos_trainer" class="d-flex justify-content-center align-items-center h-100"">
+        <div class="card">
+            <div lass="card-body">
+                <fieldset>
+                    <legend>Datos del trainer:</legend>
+                    <form id="myFormulariotrainer">
+                      <input
+                        type="text"
+                        name="nombreTrainer"
+                        placeholder="Nombre del trainer"
+                      /><br /><br />
+                      <input
+                        type="text"
+                        name="asignatura"
+                        placeholder="Nombre de la asignatura"
+                      /><br /><br />
+                      <input type="submit" value="Guardar" />
+                    </form>
+                  </fieldset>
+            </div>
+        </div>
+    </div>
     <fieldset>
-        <legend>Datos de los campers CAMPUS:</legend>
-        <form id="myFormularioPersonas">
-            <select name="sede"></select><br>
-            <input type="text" name="nombre" placeholder="Ingrese el nombre del camper"><br>
-            <input type="tel" name="telefono" placeholder="Ingrese el telefono del camper"><br>
-            <input type="submit" value="Guardar">
-        </form>
+      <legend>Horarios:</legend>
+      <form id="myFormulariohorario">
+        <input type="text" name="horario" placeholder="horario" /><br /><br />
+        <input
+          type="text"
+          name="team"
+          placeholder="Nombre del team"
+        /><br /><br />
+        <input type="submit" value="Guardar" />
+      </form>
     </fieldset>
-
-</body>
+    <fieldset>
+      <legend>Datos de los campers CAMPUS:</legend>
+      <form id="myFormularioPersonas">
+        <select name="sede"></select
+        ><br />
+        <input type="text" name="nombre" placeholder="horario" /><br /><br />
+        <input
+          type="text"
+          name="telefono"
+          placeholder="Nombre del team"
+        /><br /><br />
+        <input
+          type="text"
+          name="direccion"
+          placeholder="Nombre del team"
+        /><br /><br />
+        <input type="submit" value="Guardar" />
+      </form>
+    </fieldset>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

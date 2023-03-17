@@ -1,15 +1,28 @@
 const myFormularioCampus = document.querySelector("#myFormularioCampus");
+const myFormulariotrainer = document.querySelector("#myFormulariotrainer");
+const myFormulariohorario = document.querySelector("#myFormulariohorario");
 const myFormularioPersonas = document.querySelector("#myFormularioPersonas");
 
 const opciones = document.querySelectorAll("[name='sede']");
 
 let campus = {
   sede: [],
-  trainers: ["miguel",'yolver'],
+  trainers: [],
   fechas: [
-    {
-      "9-10": "team1",
-    },
+    [
+      {
+        dias: ["", ""],
+        fechas: "",
+      },
+      {
+        dias: ["", ""],
+        fechas: "",
+      },
+      {
+        dias: ["", ""],
+        fechas: "",
+      },
+    ],
   ],
 
   asignsaturas: ["taller 1", "taller 2", "matematicas"],
@@ -18,7 +31,7 @@ let campus = {
   Trainer: [],
   Camper: [],
 
-  Build_Roadmap: function (item1, item2, item3) {
+  Build_Roadmap: (item1, item2, item3) => {
     return {
       asignsatura1: this.asignsaturas[item1],
       asignsatura2: this.asignsaturas[item2],
@@ -26,14 +39,14 @@ let campus = {
     };
   },
 
-  Build_Trainer: function (name, asignsatura) {
+  Build_Trainer: (name, asignsatura) => {
     return {
       name: this.trainers[name],
       asignsatura: this.asignsaturas[asignsatura],
     };
   },
 
-  Build_Camper: function (name, trainer, roadmap, sede, fechas) {
+  Build_Camper: (name, trainer, roadmap, sede, fechas) => {
     return {
       [name]: {
         sede: this.sede[sede],
@@ -47,12 +60,12 @@ let campus = {
   },
 };
 
-campus.Trainer.push([0,1],[1,0])
-campus.Roadmap.push([0,1,2],[0,2,1])
+/* campus.Trainer.push([0, 1], [1, 0]);
+campus.Roadmap.push([0, 1, 2], [0, 2, 1]);
 campus.Camper.push(["daniel", 0, 0, 0, 0]);
-campus.Camper.push(["juan", 0, 0, 0, 0]);
+campus.Camper.push(["juan", 0, 0, 0, 0]); */
 
-campus.Camper.forEach((data , id) => {
+campus.Camper.forEach((data, id) => {
   console.log(
     campus.Build_Camper(
       data[0],
@@ -64,15 +77,55 @@ campus.Camper.forEach((data , id) => {
   );
 });
 
-console.log(campus.Camper);
 
 myFormularioCampus.addEventListener("submit", (e) => {
   e.preventDefault();
   let data = Object.fromEntries(new FormData(e.target));
-  campus.sede.push(data.nombreSede);
+  console.log(data);
+  // llenar datos
+  if (data.nombreSede != "") {
+    campus.sede.push(data.nombreSede);
+  } else {
+    alert("no deje espacio sin llenar");
+  }
+
+  //debujar las opciones
+
+
+  if(!confirm('desea agregar otra sede')){
+    window.location.href = '#datos_trainer'
+  }
   opciones.forEach((data) => listaSedes(data));
   myFormularioCampus.reset();
-  console.log(campus.sede);
+  console.log(campus);
+});
+
+myFormulariohorario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let data = Object.fromEntries(new FormData(e.target));
+  if (data.horario != undefined || data.team != undefined) {
+    campus.fechas.push({
+      [data.horario]: data.team,
+    });
+  } else {
+    alert("no deje espacio sin llenar");
+  }
+  myFormulariohorario.reset();
+
+  console.log(campus);
+});
+
+myFormulariotrainer.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let data = Object.fromEntries(new FormData(e.target));
+  if (data.nombreTrainer != "") {
+    campus.trainers.push(data.nombreTrainer);
+  } else {
+    alert("no deje espacio sin llenar");
+  }
+  myFormulariotrainer.reset();
+
+  console.log(campus);
 });
 
 let listaSedes = (element) => {
@@ -81,7 +134,7 @@ let listaSedes = (element) => {
     element.insertAdjacentHTML(
       "beforeend",
       `
-            <option value="${val}">${campus.sede[val]}</option>
+          <option value="${val}">${campus.sede[val]}</option>
         `
     );
   }
@@ -92,8 +145,9 @@ myFormularioPersonas.addEventListener("submit", (e) => {
   let data = Object.fromEntries(new FormData(e.target));
   console.log(data);
   let sede = data.sede;
-  delete data.sede;
+  console.log(sede);
+  /*   delete data.sede;
   campus[`${sede}`]["Camper"].unshift(data);
   console.log(campus);
-  myFormularioPersonas.reset();
+  myFormularioPersonas.reset(); */
 });
