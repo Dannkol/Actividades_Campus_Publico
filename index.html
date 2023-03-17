@@ -1,95 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="main.js" defer></script>
-    <link rel="stylesheet" href="css/main.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body class="vw-100 vh-100">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="card">
-        <div class="card-body">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+</head>
+
+<body class="vw-100 vh-100">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="card p-4">
+      <div class="card-body">
+        <fieldset>
+          <legend class="card-title">Datos de las sedes de CAMPUS:</legend>
+          <form id="myFormularioCampus">
+            <input type="text" name="nombreSede" placeholder="Nombre de la sedes" /><br /><br />
+            <input type="submit" value="Guardar" />
+          </form>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+
+  <div id="datos_trainer" class="d-flex justify-content-center align-items-center h-100"">
+        <div class=" card p-4">
+    <div lass="card-body">
+      <fieldset>
+        <legend>Datos asignatura:</legend>
+        <form id="myFormularioasignaturas">
+          <input type="text" name="asignatura" placeholder="Nombre de la asignatura" /><br /><br />
+          <input type="submit" value="Guardar" />
+        </form>
+      </fieldset>
+    </div>
+  </div>
+  </div>
+  <div id="datos_trainer" class="d-flex justify-content-center align-items-center h-100"">
+    <div class=" card p-4">
+      <div lass="card-body">
+        <fieldset>
+          <legend>Teams:</legend>
+          <form id="myFormularioteams">
+            <input type="text" name="team" placeholder="Nombre del team" /><br /><br />
+            <input type="submit" value="Guardar" />
+          </form>
+        </fieldset>
+      </div>
+    </div>
+</div>
+  <div id="datos_horario" class="d-flex justify-content-center align-items-center h-100"">
+      <div class=" card p-4">
+        <div lass="card-body">
           <fieldset>
-            <legend class="card-title">Datos de las sedes de CAMPUS:</legend>
-            <form id="myFormularioCampus">
-              <input
-                type="text"
-                name="nombreSede"
-                placeholder="Nombre de la sedes"
-              /><br /><br />
+            <legend>Horarios:</legend>
+            <form id="myFormulariohorario">
+              <select name="clase">
+                <option value="software_skill">software</option>
+                <option value="inlges">Ingles</option>
+                <option value="ser">Ser</option>
+              </select>
+              <br><br>
+              <select name="teams"></select>
+              <br><br>
+              <select name="dia1">
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miercoles">Miercoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+              </select> 
+              -
+              <select name="dia2">
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miercoles">Miercoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+              </select>
+              <br><br>
+              <input type="time" name="horario1"/> - <input type="time" name="horario2"/><br /><br />
               <input type="submit" value="Guardar" />
             </form>
           </fieldset>
         </div>
       </div>
-    </div>
+  </div>
 
-    <div id="datos_trainer" class="d-flex justify-content-center align-items-center h-100"">
-        <div class="card">
-            <div lass="card-body">
-                <fieldset>
-                    <legend>Datos del trainer:</legend>
-                    <form id="myFormulariotrainer">
-                      <input
-                        type="text"
-                        name="nombreTrainer"
-                        placeholder="Nombre del trainer"
-                      /><br /><br />
-                      <input
-                        type="text"
-                        name="asignatura"
-                        placeholder="Nombre de la asignatura"
-                      /><br /><br />
-                      <input type="submit" value="Guardar" />
-                    </form>
-                  </fieldset>
-            </div>
-        </div>
-    </div>
-    <fieldset>
-      <legend>Horarios:</legend>
-      <form id="myFormulariohorario">
-        <input type="text" name="horario" placeholder="horario" /><br /><br />
-        <input
-          type="text"
-          name="team"
-          placeholder="Nombre del team"
-        /><br /><br />
-        <input type="submit" value="Guardar" />
-      </form>
-    </fieldset>
-    <fieldset>
-      <legend>Datos de los campers CAMPUS:</legend>
-      <form id="myFormularioPersonas">
-        <select name="sede"></select
-        ><br />
-        <input type="text" name="nombre" placeholder="horario" /><br /><br />
-        <input
-          type="text"
-          name="telefono"
-          placeholder="Nombre del team"
-        /><br /><br />
-        <input
-          type="text"
-          name="direccion"
-          placeholder="Nombre del team"
-        /><br /><br />
-        <input type="submit" value="Guardar" />
-      </form>
-    </fieldset>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+
+  <fieldset>
+    <legend>Datos de los campers CAMPUS:</legend>
+    <form id="myFormularioPersonas">
+      <select name="sede"></select><br />
+      <select name="asignatura"></select><br />
+      <select name="horario"></select><br />
+      <input type="text" name="nombre" placeholder="horario" /><br /><br />
+      <input type="text" name="telefono" placeholder="Nombre del team" /><br /><br />
+      <input type="text" name="direccion" placeholder="Nombre del team" /><br /><br />
+      <input type="submit" value="Guardar" />
+    </form>
+  </fieldset>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
