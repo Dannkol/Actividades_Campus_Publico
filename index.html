@@ -1,60 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <script src="main.js" defer></script>
-  <link rel="stylesheet" href="css/main.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-</head>
-
-<body class="vw-100 vh-100">
-  <div class="d-flex justify-content-center align-items-center h-100">
-    <div class="card p-4">
-      <div class="card-body">
-        <fieldset>
-          <legend class="card-title">Datos de las sedes de CAMPUS:</legend>
-          <form id="myFormularioCampus">
-            <input type="text" name="nombreSede" placeholder="Nombre de la sedes" /><br /><br />
-            <input type="submit" value="Guardar" />
-          </form>
-        </fieldset>
+  <body class="vw-100 vh-100">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="card p-4">
+        <div class="card-body">
+          <fieldset>
+            <legend class="card-title">Datos de las sedes de CAMPUS:</legend>
+            <form id="myFormularioCampus">
+              <input
+                type="text"
+                name="nombreSede"
+                placeholder="Ciudad de la sedes"
+              /><br /><br />
+              <input
+                type="address"
+                name="direccion"
+                placeholder="Ingresa la Dirreccion"
+              /><br /><br />
+              <input
+                type="tel"
+                name="tel"
+                placeholder="Ingres el Telefono"
+              /><br /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </fieldset>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="datos_trainer" class="d-flex justify-content-center align-items-center h-100"">
-        <div class=" card p-4">
-    <div lass="card-body">
-      <fieldset>
-        <legend>Datos asignatura:</legend>
-        <form id="myFormularioasignaturas">
-          <input type="text" name="asignatura" placeholder="Nombre de la asignatura" /><br /><br />
-          <input type="submit" value="Guardar" />
-        </form>
-      </fieldset>
-    </div>
-  </div>
-  </div>
-  <div id="datos_trainer" class="d-flex justify-content-center align-items-center h-100"">
-    <div class=" card p-4">
-      <div lass="card-body">
-        <fieldset>
-          <legend>Teams:</legend>
-          <form id="myFormularioteams">
-            <input type="text" name="team" placeholder="Nombre del team" /><br /><br />
-            <input type="submit" value="Guardar" />
-          </form>
-        </fieldset>
+    <div
+      id="datos_asignaturas"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="card p-4">
+        <div lass="card-body">
+          <fieldset>
+            <legend>Datos asignatura:</legend>
+            <form id="myFormularioasignaturas">
+              <input
+                type="text"
+                name="asignatura"
+                placeholder="Nombre de la asignatura"
+              /><br /><br />
+              <label>Formacion: </label>
+              <select name="tipo_formacion">
+                <option value="0">Presencial</option>
+                <option value="1">Virtual</option>
+              </select>
+              <br /><br />
+              <label>Sanbox: </label>
+              <select name="sandox">
+                <option value="0">si</option>
+                <option value="1">no</option>
+              </select>
+              <br /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </fieldset>
+        </div>
       </div>
     </div>
-</div>
-  <div id="datos_horario" class="d-flex justify-content-center align-items-center h-100"">
-      <div class=" card p-4">
+    <div
+      id="datos_teams"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="card p-4">
+        <div lass="card-body">
+          <fieldset>
+            <legend>Teams:</legend>
+            <form id="myFormularioteams">
+              <input
+                type="text"
+                name="team"
+                placeholder="Nombre del team"
+              /><br /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      id="datos_horario"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="card p-4">
         <div lass="card-body">
           <fieldset>
             <legend>Horarios:</legend>
@@ -64,16 +110,16 @@
                 <option value="inlges">Ingles</option>
                 <option value="ser">Ser</option>
               </select>
-              <br><br>
+              <br /><br />
               <select name="teams"></select>
-              <br><br>
+              <br /><br />
               <select name="dia1">
                 <option value="lunes">Lunes</option>
                 <option value="martes">Martes</option>
                 <option value="miercoles">Miercoles</option>
                 <option value="jueves">Jueves</option>
                 <option value="viernes">Viernes</option>
-              </select> 
+              </select>
               -
               <select name="dia2">
                 <option value="lunes">Lunes</option>
@@ -82,31 +128,204 @@
                 <option value="jueves">Jueves</option>
                 <option value="viernes">Viernes</option>
               </select>
-              <br><br>
-              <input type="time" name="horario1"/> - <input type="time" name="horario2"/><br /><br />
+              <br /><br />
+              <input type="time" name="horario1" /> -
+              <input type="time" name="horario2" /><br /><br />
               <input type="submit" value="Guardar" />
             </form>
           </fieldset>
         </div>
       </div>
-  </div>
+    </div>
 
+    <div
+      id="datos_roadmap"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="card p-4">
+        <div class="card-body">
+          <fieldset>
+            <legend>Crea un roadmap:</legend>
+            <form id="addasignature">
+              <label>Asignaturas:</label>
+              <select name="asignaturas"></select>
+              <input type="submit" value="+" /><br /><br />
+              <label>Asignaturas agregadas</label>
+              <div class="card w-75">
+                <div class="asignaturas card-body d-flex gap-2 flex-wrap"></div>
+              </div>
+              <br />
+            </form>
+            <form id="myFormularioBuildRoadmap">
+              <label>Nombre</label>
+              <input
+                name="nombre"
+                type="text"
+                placeholder="ingresa una nombre para el roadmap"
+              /><br /><br />
+              <label>Año:</label>
+              <input
+                name="año"
+                type="text"
+                placeholder="Ingresa el año"
+              /><br />
+              <label>Creditos</label>
+              <input
+                name="creditos"
+                type="number"
+                placeholder="Valor en creditos"
+              />
+              <br /><br />
+              <input type="submit" />
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      id="datos_trainer"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="card p-4">
+        <div lass="card-body">
+          <fieldset>
+            <legend>Trainer:</legend>
+            <form id="myFormulariotrainer">
+              <input type="text" name="name" placeholder="Nombre del Trainer" />
+              <br /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      id="datos_Build_trainer"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="card p-4">
+        <div lass="card-body">
+          <fieldset>
+            <legend>Trainer:</legend>
+            <form id="addasignature">
+              <label>Asignaturas:</label>
+              <select name="asignaturas"></select>
+              <input type="submit" value="+" /><br /><br />
+              <label>Asignaturas agregadas</label>
+              <div class="card w-75">
+                <div class="asignaturas card-body d-flex gap-2 flex-wrap"></div>
+              </div>
+              <br />
+            </form>
+            <form id="myFormulariobuildtrainer">
+              <label>Trainers</label>
+              <select name="trainers"></select>
+              <br /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      id="datos_camper"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="card p-4">
+        <div class="card-body">
+          <fieldset>
+            <legend>Datos de los campers CAMPUS:</legend>
+            <form id="myFormularioPersonas">
+              <label>Elige la sede del camper :</label>
+              <select name="sede"></select
+              ><br />
+              <label>Elige el roadmap del camper :</label>
+              <select name="roadmap"></select
+              ><br />
+              <label>Elige el team(horario) del camper:</label>
+              <select name="teams"></select>
+              <br />
+              <label>transporte propio? :</label>
+              <select name="transporte">
+                <option value="0">Si</option>
+                <option value="1">No</option>
+              </select>
+              <br /><br />
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre del camper"
+              /><br /><br />
+              <input
+                type="text"
+                name="tel"
+                placeholder="Telefono del camper"
+              /><br /><br />
+              <input
+                type="text"
+                name="address"
+                placeholder="Dirreccion del camper"
+              /><br /><br />
+              <input
+                type="text"
+                name="email"
+                placeholder="Email del camper"
+              /><br /><br />
+              <input
+                type="text"
+                name="salon"
+                placeholder="Salon del camper"
+              /><br /><br />
+              <input
+                type="number"
+                name="nivel"
+                placeholder="ingrese el nivel del camper"
+              /><br /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      id="consultas"
+      class="d-flex justify-content-center align-items-center my-4"
+    >
+      <div class="card w-75 h-75 p-4">
+        <div class="card-body">
+          <label>Consultar</label>
+          <select name="consulta">
+            <option value="Trainer">Trainer</option>
+            <option value="campers">Campers</option>
+            <option value="sedes">Sedes</option>
+          </select>
+          <form class="consultas"></form>
+          <br />
+          <div class="card w-auto">
+            <div class="resultado card-body d-flex gap-5 flex-wrap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
 
-  <fieldset>
-    <legend>Datos de los campers CAMPUS:</legend>
-    <form id="myFormularioPersonas">
-      <select name="sede"></select><br />
-      <select name="asignatura"></select><br />
-      <select name="horario"></select><br />
-      <input type="text" name="nombre" placeholder="horario" /><br /><br />
-      <input type="text" name="telefono" placeholder="Nombre del team" /><br /><br />
-      <input type="text" name="direccion" placeholder="Nombre del team" /><br /><br />
-      <input type="submit" value="Guardar" />
-    </form>
-  </fieldset>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-</body>
-
+      class="d-flex justify-content-center align-items-center "
+    >
+      <div class="card p-4">
+        <div class="card-body">
+          <h1>CONSULTAS PREESTABLECIDAS DEL PUNTO 3</h1>
+          <div class="card p-4">
+            <div class="consulta_preestablecidas card-body">
+              <h1>Empresas</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
