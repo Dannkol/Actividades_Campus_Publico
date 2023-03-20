@@ -73,77 +73,81 @@ let campus = {
   sede: [],
   teams: [],
   trainers: [],
+
+  // Estructura de las fechas
+  // {
+  //   "1": {
+  //     "inlges": [
+  //       [
+  //         "lunes",
+  //         "lunes"
+  //       ],
+  //       [
+  //         "04:08",
+  //         "07:08"
+  //       ]
+  //     ]
+  //   }
+  // },
+  // {
+  //   "1": {
+  //     "software_skill": [
+  //       [
+  //         "miercoles",
+  //         "jueves"
+  //       ],
+  //       [
+  //         "02:08",
+  //         "04:08"
+  //       ]
+  //     ]
+  //   }
+  // },
+  // {
+  //   "0": {
+  //     "ser": [
+  //       [
+  //         "miercoles",
+  //         "lunes"
+  //       ],
+  //       [
+  //         "04:08",
+  //         "04:08"
+  //       ]
+  //     ]
+  //   }
+  // },
+  // {
+  //   "0": {
+  //     "inlges": [
+  //       [
+  //         "miercoles",
+  //         "lunes"
+  //       ],
+  //       [
+  //         "04:08",
+  //         "15:10"
+  //       ]
+  //     ]
+  //   }
+  // },
+  // {
+  //   "0": {
+  //     "software_skill": [
+  //       [
+  //         "lunes",
+  //         "lunes"
+  //       ],
+  //       [
+  //         "02:07",
+  //         "16:07"
+  //       ]
+  //     ]
+  //   }
+  // }
+
   fechas: [
-    {
-      "1": {
-        "inlges": [
-          [
-            "lunes",
-            "lunes"
-          ],
-          [
-            "04:08",
-            "07:08"
-          ]
-        ]
-      }
-    },
-    {
-      "1": {
-        "software_skill": [
-          [
-            "miercoles",
-            "jueves"
-          ],
-          [
-            "02:08",
-            "04:08"
-          ]
-        ]
-      }
-    },
-    {
-      "0": {
-        "ser": [
-          [
-            "miercoles",
-            "lunes"
-          ],
-          [
-            "04:08",
-            "04:08"
-          ]
-        ]
-      }
-    },
-    {
-      "0": {
-        "inlges": [
-          [
-            "miercoles",
-            "lunes"
-          ],
-          [
-            "04:08",
-            "15:10"
-          ]
-        ]
-      }
-    },
-    {
-      "0": {
-        "software_skill": [
-          [
-            "lunes",
-            "lunes"
-          ],
-          [
-            "02:07",
-            "16:07"
-          ]
-        ]
-      }
-    }
+    
   ],
   /*
     primer valor nombre, segundo presencial, sanbox  
@@ -151,7 +155,7 @@ let campus = {
     0 -> si y 1 -> no 
   
     */
-  asignsaturas: [["mate", 0, 0], ["ingles", 1, 0], ["teller1", 0, 1]],
+  asignsaturas: [],
 
 
   /*Almacena datos para los contructores almacenando los indices los atributos */
@@ -289,24 +293,19 @@ for (data in campus.Empresas) {
 
 
 
-campus.Trainer.unshift([0, 1, 0, 2], [1, 0]);
-campus.Roadmap.unshift(['vue', 4, 2, 0, 1, 2, 0], ['react', 4, 2, 0, 1, 2, 0]);
-campus.Camper.unshift(["daniel", 0, 0, 0, 3215486, 'giron', 'pepe@pepe.com', 1, 0, 0], ["david", 0, 0, 0, 3215486, 'bucaramga', 'pepe@pepe.com', 1, 1, 0], ["juan", 0, 0, 0, 3215486, 'bucaramga', 'pepe@pepe.com', 1, 1, 1]);
 
 
-console.log(campus.Build_Roadmap(...campus.Roadmap[0]))
-
-campus.Camper.forEach((data) => {
-  const [name, index1, index2, index3, ...rest] = data;
-  const roadmap = campus.Build_Roadmap(index1);
-  const camper = campus.Build_Camper(roadmap,
-    name,
-    index2,
-    index3,
-    ...rest
-  );
-  console.log(camper)
-});
+// dibujo del camper
+// campus.Camper.forEach((data) => {
+//   const [name, index1, index2, index3, ...rest] = data;
+//   const roadmap = campus.Build_Roadmap(index1);
+//   const camper = campus.Build_Camper(roadmap,
+//     name,
+//     index2,
+//     index3,
+//     ...rest
+//   );
+// });
 
 
 myFormularioCampus.addEventListener("submit", (e) => {
