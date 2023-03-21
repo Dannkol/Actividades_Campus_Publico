@@ -56,7 +56,6 @@ let add_btn = (element, datos) => {
       `
     );
   }
-  console.log(opciones);
 }
 
 let remove_btn = (elementdelet, datos) => {
@@ -644,16 +643,16 @@ let drawcamper_all = (datos, element) => {
 
       `
       <div class="p-4">
-        <p>
-          <spam>Nombre :</spam><h5>${nombre}</h5>
-          <label>Direccion: </label><address>${direccion}</address>
-          <label>telefono: </label><p>${telefono}</p>
-          <label>transporte: </label><p>${transporte}</p>
-          <label>Team: </label><p>${campus.teams[data[3]]}</p>
-          <labal>Roadmap: </label><p>${roadmap.name}</p>
-          <label>salon: </label><p>${salon}</p>
-          <label>nivel: </label><p>${nivel}</p>
-        </p>
+          <p>
+            <spam>Nombre :</spam><h5>${nombre}</h5>
+            <label>Direccion: </label><address>${direccion}</address>
+            <label>telefono: </label><p>${telefono}</p>
+            <label>transporte: </label><p>${transporte}</p>
+            <label>Team: </label><p>${campus.teams[data[3]]}</p>
+            <labal>Roadmap: </label><p>${roadmap.name}</p>
+            <label>salon: </label><p>${salon}</p>
+            <label>nivel: </label><p>${nivel}</p>
+          </p>
       </div>
       `
 
@@ -674,12 +673,12 @@ let drawtrainer_all = (data, element) => {
       element.insertAdjacentHTML("beforeend",
         `
         <div class="p-4">
-        <p>
-          <spam>Nombre del trainer :</spam><h5>${name}</h5>
-          <label>Asignatura: </label><address>${nombre}</address>
-          <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
-          <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
-        </p>
+          <p>
+            <spam>Nombre del trainer :</spam><h5>${name}</h5>
+            <label>Asignatura: </label><address>${nombre}</address>
+            <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
+            <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
+          </p>
       </div>
         `
 
@@ -695,19 +694,19 @@ let drawtrainer_tipodeformacion = (data, element, opciones) => {
     const { name, asignsatura } = campus.Build_Trainer(...item)
     asignsatura.forEach(asignsaturas => {
       const [nombre, tipo_formacion, sanbox] = asignsaturas
-      console.log(opciones)
+      console.log([nombre, tipo_formacion, sanbox], opciones)
       switch (opciones) {
         case "Presencial":
           if (tipo_formacion == 0) {
             element.insertAdjacentHTML("beforeend",
               `
               <div class="p-4">
-              <p>
-                <spam>Nombre del trainer :</spam><h5>${name}</h5>
-                <label>Asignatura: </label><address>${nombre}</address>
-                <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
-                <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
-              </p>
+                <p>
+                  <spam>Nombre del trainer :</spam><h5>${name}</h5>
+                  <label>Asignatura: </label><address>${nombre}</address>
+                  <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
+                  <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
+                </p>
             </div>
               `
 
@@ -719,14 +718,14 @@ let drawtrainer_tipodeformacion = (data, element, opciones) => {
           if (tipo_formacion == 1) {
             element.insertAdjacentHTML("beforeend",
               `
-            <div class="p-4">
-            <p>
-              <spam>Nombre del trainer :</spam><h5>${name}</h5>
-              <label>Asignatura: </label><address>${nombre}</address>
-              <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
-              <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
-            </p>
-          </div>
+                <div class="p-4">
+                  <p>
+                    <spam>Nombre del trainer :</spam><h5>${name}</h5>
+                    <label>Asignatura: </label><address>${nombre}</address>
+                    <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
+                    <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
+                  </p>
+                </div>
             `
 
             )
@@ -738,12 +737,12 @@ let drawtrainer_tipodeformacion = (data, element, opciones) => {
             element.insertAdjacentHTML("beforeend",
               `
             <div class="p-4">
-            <p>
-              <spam>Nombre del trainer :</spam><h5>${name}</h5>
-              <label>Asignatura: </label><address>${nombre}</address>
-              <label>Formacion: </label><p>${tipo_formacion === 0 ? 'Presencial' : 'Vitural'}</p>
-              <label>Sandbox: </label><p>${sanbox === 0 ? 'si' : 'no'}</p>
-            </p>
+              <p>
+                <spam>Nombre del trainer :</spam><h5>${name}</h5>
+                <label>Asignatura: </label><address>${nombre}</address>
+                <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
+                <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
+              </p>
           </div>
             `
 
@@ -753,15 +752,16 @@ let drawtrainer_tipodeformacion = (data, element, opciones) => {
           break;
         case "Sanbox_no":
           if (sanbox == 1) {
+            console.log(sanbox)
             element.insertAdjacentHTML("beforeend",
               `
             <div class="p-4">
-            <p>
-              <spam>Nombre del trainer :</spam><h5>${name}</h5>
-              <label>Asignatura: </label><address>${nombre}</address>
-              <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
-              <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
-            </p>
+              <p>
+                <spam>Nombre del trainer :</spam><h5>${name}</h5>
+                <label>Asignatura: </label><address>${nombre}</address>
+                <label>Formacion: </label><p>${tipo_formacion == 0 ? 'Presencial' : 'Vitural'}</p>
+                <label>Sandbox: </label><p>${sanbox == 0 ? 'si' : 'no'}</p>
+              </p>
           </div>
             `
 
