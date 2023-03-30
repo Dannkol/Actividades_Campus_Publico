@@ -1,29 +1,9 @@
-export default {
-  title: {
-    name: "Maderas el Artesano",
-    href: "#",
-  },
-  navigator: [
-    {
-      name: "Tableros",
-      href: "#",
-    },
-    {
-      name: "Muebleria",
-      href: "#",
-    },
-    {
-      name: "Soluciones Arquitectonicas",
-      href: "#",
-    },
-    {
-      name: "Contactanos",
-      href: "#",
-    },
-  ],
-  
+import config from "../Workers/config.js";
 
+export default {
   Drawheader(){
+    config.dataMyheader();
+    Object.assign(this, JSON.parse(localStorage.getItem("myheader")));
     const nav = document.querySelector('.nav');
     const header = document.querySelector('header');
     const myWorker = new Worker("/componets/Workers/wsHeader.js", {

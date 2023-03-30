@@ -1,64 +1,8 @@
+import config from "../Workers/config.js";
 export default {
-  info: [
-    {
-      title: "About",
-      description:
-        "Somo una empresa lideres en la fabricacion de tableros y articulos de oficina en carpinteria, con experiencia amplia en soluciones de arquitectonicas.",
-    },
-    {
-      title: "About",
-      description:
-        "Somo una empresa lideres en la fabricacion de tableros y articulos de oficina en carpinteria, con experiencia amplia en soluciones de arquitectonicas.",
-    },
-  ],
-  archive: {
-    title: "Archivos",
-    data: [
-      {
-        date: "Proyecto casa em el arbol 2018.",
-        href: "#",
-      },
-      {
-        date: "Proyecto solucion arqitectonicas 2019.",
-        href: "#",
-      },
-      {
-        date: "Proyecto muebleria inteligente 2020.",
-        href: "#",
-      },
-      {
-        date: "Proyecto muebleria inteligente 2020.",
-        href: "#",
-      },
-      {
-        date: "Proyecto muebleria inteligente 2020.",
-        href: "#",
-      },
-      {
-        date: "Proyecto muebleria inteligente 2020.",
-        href: "#",
-      },
-    ],
-  },
-
-  Elsewhere: {
-    title: "Encuentranos",
-    data: [
-      {
-        name: "Linkedin",
-        href: "#",
-      },
-      {
-        name: "Twitter",
-        href: "#",
-      },
-      {
-        name: "Facebook",
-        href: "#",
-      },
-    ],
-  },
   wsAside() {
+    config.dataMyside()
+    Object.assign(this,JSON.parse(localStorage.getItem("myaside")))
     let aside = document.querySelector("#navbar_aside");
     const myWorker = new Worker("/componets/Workers/wsAside.js", {
       type: "module",

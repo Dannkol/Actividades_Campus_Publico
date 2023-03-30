@@ -1,71 +1,8 @@
+import config from "../Workers/config.js";
 export default {
-  banner_img: {
-    title: "Trabajos echos a la media de tus necesidades",
-    description:
-      "Somo fabricantes y vendedores directos, nuestros productos se caracterizan por una alta calidad, confiabilidad y precios competitivos",
-    more: {
-      name: "Conoce más",
-      href: "#",
-    },
-    img: "./assets/img/Banner_carpinteria.jpg",
-  },
-  banner_card: [
-    {
-      title: "Tabajos",
-      sub_title: "Calidad",
-      date: "12 Mar",
-      description:
-        "Carantizamos la calidad de todos nuestros protductos y servicios",
-      more: {
-        name: "Conece nuestros estandares",
-        href: "#",
-      },
-      img_thumbnail : "./assets/img/Banner_carpinteria.jpg",
-      text_thumbnail : "Economia"
-    },
-    {
-        title: "Diseño",
-        sub_title: "A tu medida",
-        date: "13 Mar",
-        description:
-          "Diseños unicos, crean espacios maravillosos",
-        more: {
-          name: "Conece nuestros estandares",
-          href: "#",
-        },
-        img_thumbnail : "./assets/img/Banner_carpinteria.jpg",
-        text_thumbnail : "Calidad"
-      },
-      {
-        title: "Diseño",
-        sub_title: "A tu medida",
-        date: "13 Mar",
-        description:
-          "Diseños unicos, crean espacios maravillosos",
-        more: {
-          name: "Conece nuestros estandares",
-          href: "#",
-        },
-        img_thumbnail : "./assets/img/Banner_carpinteria.jpg",
-        text_thumbnail : "Servicios"
-      },
-      {
-        title: "Diseño",
-        sub_title: "A tu medida",
-        date: "13 Mar",
-        description:
-          "Diseños unicos, crean espacios maravillosos",
-        more: {
-          name: "Conece nuestros estandares",
-          href: "#",
-        },
-        img_thumbnail : "./assets/img/Banner_carpinteria.jpg",
-        text_thumbnail : "A tu medida"
-      },
-    
-  ],
-
   wsdraw_banner(){
+    config.dataMybanner()
+    Object.assign(this, JSON.parse(localStorage.getItem("mybanner")))
     let banner_card = document.querySelector("#banner_card");
     let banner_img = document.querySelector("#banner_img");
     const myWorker = new Worker("/componets/Workers/wsBanner.js", {
