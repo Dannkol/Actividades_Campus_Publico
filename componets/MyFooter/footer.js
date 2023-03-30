@@ -10,18 +10,16 @@ export default {
 
     },
     Draw_footer(){
-        document.querySelector('.blog-footer').insertAdjacentHTML('beforeend', 
-        `
-            <p>© ${new Date().getFullYear()} Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
-                href="${this.info.author.link}"> ${this.info.author.name}</a>.
-            </p>
-            <p>
-                <a href="#">${this.info.copyrigth}</a>
-            </p>
-            <div class="blog-footer-copyright">
-                 
-            </div>
+        const footer = document.querySelector('.blog-footer');
+        const myWorker = new Worker("/componets/Workers/wsFooter.js", {
+            type: "module",
+        });
+        myWorker.postMessage({module: "Draw_footer" , data : this.info});
+        myWorker.addEventListener("message", (e) =>{
+            let doc = new DOMParser().parseFromString(e.data , 'text/html');
+            footer.appendChild(...doc.body.children)
+            myWorker.terminate();
+        });
         
-        `)
     }
 }

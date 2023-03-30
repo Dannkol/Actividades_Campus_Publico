@@ -6,9 +6,8 @@ import post from "./componets/MyPosts/post.js";
 
 post.DrawPost();
 
-header.listarNavbar();
-header.DrawTitle();
-banner.Draw_img();
-banner.Draw_card();
-aside.Draw_aside();
+header.Drawheader();
+
+banner.wsdraw_banner();
+aside.wsAside();
 footer.Draw_footer();

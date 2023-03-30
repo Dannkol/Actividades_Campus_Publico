@@ -55,25 +55,54 @@ export default {
       slug: "first-sample-blog-post",
       content: [],
     },
+    {
+      title: "Los Tableros a tu medida",
+      meta_data: {
+        date: "January 1, 2021",
+        description: [
+          {
+            text: "parafo 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in ",
+          },
+          {
+            text: "parafo 4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in ",
+          },
+          {
+            subtitle: "Precios",
+          },
+          {
+            lista: ["item 1" ,"item 2" ,"item 3"],
+          },
+        ],
+
+        autor: [
+          {
+            name: "Juan Jesus",
+            href: "upchh@example.com",
+          },
+        ],
+      },
+      slug: "first-sample-blog-post",
+      content: [],
+    },
   ],
-  wspost(){
-    
-  },
+
   DrawPost() {
-    const post = document.querySelector(".blog-post");
-    const fragment = document.createDocumentFragment();
+    const post = document.querySelectorAll(".blog-post");
     const myWorker = new Worker("/componets/Workers/MyfirstPost.js", {
       type: "module",
     });
-    console.log()
-
-    myWorker.postMessage({module: "draw_p" , data:this.posts[0].meta_data.description});
-    myWorker.postMessage({module: "draw_table" , data:this.posts[0].meta_data.description[3].table});
-    myWorker.addEventListener("message", (e)=>{
-      let doct = new DOMParser().parseFromString(e.data , 'text/html')
-      console.log(e)
-      post.append(...doct.body.children);
-          
+    this.posts.forEach((posts) =>{
+      myWorker.postMessage({module: "draw_subtitle" , data: posts.title});
+      myWorker.postMessage({module: "draw_date" , data: posts.meta_data});
+      myWorker.postMessage({module: "draw_p" , data: posts.meta_data.description});
+      myWorker.postMessage({module: "draw_table" , data: posts.meta_data.description[3].table});
+      myWorker.postMessage({module: "draw_lista" , data: posts.meta_data.description[3].lista});
     })
+    myWorker.postMessage({module: "finished"});
+    myWorker.addEventListener("message", (e)=>{
+      let doct = new DOMParser().parseFromString(e.data , 'text/html');
+      e.data.module === "finished" ? myWorker.terminate() : post.forEach(post => post.append(...doct.body.children));
+    })
+    
   },
 };

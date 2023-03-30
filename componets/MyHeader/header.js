@@ -21,23 +21,25 @@ export default {
       href: "#",
     },
   ],
-  listarNavbar() {
-    let plantilla = "";
-    this.navigator.forEach((item) => {
-      plantilla += `<a class="p-2 link-secondary" href="${item.href}">${item.name}</a>`;
+  
+
+  Drawheader(){
+    const nav = document.querySelector('.nav');
+    const header = document.querySelector('header');
+    const myWorker = new Worker("/componets/Workers/wsHeader.js", {
+      type: "module",
     });
-    document.querySelector(".nav").insertAdjacentHTML("beforeend", plantilla);
-  },
-  DrawTitle() {
-    document.querySelector("header").insertAdjacentHTML(
-      "beforeend",
-      `
-            <div class="row flex-nowrap justify-content-between align-items-center">
-                <div class="col-12 text-center">
-                    <a class="blog-header-logo text-dark" href="${this.title.href}">${this.title.name}</a>
-                </div>
-            </div>
-        `
-    );
-  },
+    myWorker.postMessage({module : "listarNavbar", data: this.navigator});
+    myWorker.postMessage({module : "DrawTitle", data: this.title});
+    myWorker.postMessage({module: "finished"});
+    myWorker.addEventListener("message", (e) => {
+      let doct = new DOMParser().parseFromString(e.data[0] , 'text/html')
+      e.data[1] === "nav" 
+      ? nav.append(...doct.body.children) 
+      : e.data === "finished" ? myWorker.terminate() 
+      : header.append(...doct.body.children) ;
+    })
+    //document.querySelector(".nav").insertAdjacentHTML("beforeend", plantilla);
+    // document.querySelector("header")
+  }
 };
