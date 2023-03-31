@@ -1,0 +1,24 @@
+.data_table{
+    overflow: hidden;
+}
+
+.icon_close{
+    display: none !important;
+}
+
+.delet_animation:hover{
+    transition: transform 0.4s ease-out;
+    transform: translateX(-5%);
+}
+
+.card{
+    
+}
+
+.delet_animation:hover > .icon_close{
+
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
