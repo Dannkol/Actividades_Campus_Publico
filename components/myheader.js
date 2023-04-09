@@ -19,7 +19,6 @@ export default {
             let data = Object.fromEntries(new FormData(e.target));
             const datos_local = config.localstoragedata("datos_ingresos" , JSON.stringify(data))
             const myworker = new Worker("components/worker/calcular.js")
-            console.log(datos_local)
             myworker.postMessage({data : datos_local})
         })  
     }
