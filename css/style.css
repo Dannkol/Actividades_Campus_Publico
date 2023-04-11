@@ -4,6 +4,7 @@
 
 .icon_close{
     display: none !important;
+    cursor: pointer;
 }
 
 .delet_animation:hover{
@@ -11,9 +12,6 @@
     transform: translateX(-5%);
 }
 
-.card{
-    
-}
 
 .delet_animation:hover > .icon_close{
 

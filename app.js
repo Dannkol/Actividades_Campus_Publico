@@ -1,8 +1,12 @@
 import myheader from "./components/myheader.js";
+import delet from "./components/delet.js";
+
 
 myheader.formData()
+delet.delete()
 
-let data =     [
+
+/* let data =     [
     {
       "tipo_gasto": "-",
       "Descripcion": "comida",
@@ -44,4 +48,4 @@ console.log("egresos" , resta.reduce((acc , item) => acc + parseFloat(item.valor
 
 resta.forEach(element => {
     console.log(element.Descripcion , `${((parseFloat(element.valor)*100) / resta.reduce((acc , item) => acc + parseFloat(item.valor), 0)).toFixed(2)} %`)
-});
+}); */
