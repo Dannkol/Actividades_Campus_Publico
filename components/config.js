@@ -19,5 +19,16 @@ export default {
         }
 
         return datalocal === null ?  nodatos(storage, datos_formulario) : sidatos(storage, datos_formulario) ;
+    },
+    delete(storage,id){
+        let datalocal = localStorage.getItem(storage)
+        let data = JSON.parse(datalocal)
+        console.log(data)
+        data.splice(id,1)
+        console.log(data)
+        localStorage.setItem(storage, JSON.stringify(data) )
+        console.log(localStorage.getItem(storage))
+        return localStorage.getItem(storage)
     }
+
 }

@@ -5,6 +5,14 @@ export default{
 
     item_remove(e){
         e.target.parentElement.parentElement.parentElement.remove()
+        const id = e.target.id
+        const data_set = e.target.dataset.id
+        console.log(data_set  , id )
+        const datos_local = config.delete(
+            "datos_ingresos",
+            id
+        );
+        myheader.show(datos_local)
     },
 
     delete () {

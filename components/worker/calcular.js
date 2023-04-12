@@ -53,13 +53,13 @@ const opter = {
         class="alert text-center alert-danger p-0 m-0 fs-6 w-auto h-50"
         role="alert"
       >
-      ${((resta * 100) / Math.abs(suma - resta)).toFixed(2)}%
+      ${(Math.abs(resta * 100) / Math.abs(suma )).toFixed(2)}%
       </div></div>
     `;
     return plantilla;
   },
   porcentaje_egresos_item(data) {
-    console.log(data)
+    let egresos = data.filter((itme) => { return itme.tipo_gasto === "+"})
     let plantilla = `
       <table class="table table-striped">
         <thead>
@@ -71,7 +71,7 @@ const opter = {
           ${data
             .map((element, id) => {
               return element.tipo_gasto === "-"
-                ? `${console.log(id)} <tr>
+                ? `<tr>
                 <td class="data_table">
                   <div
                     class="delet_animation card d-flex flex-row flex-nowrap justify-content-center  border-0 bg-transparent"
@@ -88,7 +88,7 @@ const opter = {
                         >
                         ${(
                           (parseFloat(element.valor) * 100) /
-                          data.reduce(
+                          egresos.reduce(
                             (acc, item) => acc + parseFloat(item.valor),
                             0
                           )
@@ -125,6 +125,8 @@ const opter = {
     return plantilla;
   },
   porcentaje_ingresos_item(data) {
+    let ingresos = data.filter((itme) => { return itme.tipo_gasto === "+"})
+    console.log(ingresos)
     let plantilla = `
       <table class="table table-striped">
         <thead>
@@ -151,9 +153,12 @@ const opter = {
                           class="alert text-center alert-danger p-0 m-0 fs-6 w-auto h-75"
                           role="alert"
                         >
-                        ${(
+                        ${
+                          
+                          
+                          (
                           (parseFloat(element.valor) * 100) /
-                          data.reduce(
+                          ingresos.reduce(
                             (acc, item) => acc + parseFloat(item.valor),
                             0
                           )
