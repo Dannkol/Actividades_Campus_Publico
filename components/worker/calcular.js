@@ -53,13 +53,19 @@ const opter = {
         class="alert text-center alert-danger p-0 m-0 fs-6 w-auto h-50"
         role="alert"
       >
-      ${(Math.abs(resta * 100) / Math.abs(suma )).toFixed(2)}%
+      ${
+        (Math.abs(resta * 100) / Math.abs(suma)).toFixed(2) === "NaN"
+          ? "0"
+          : (Math.abs(resta * 100) / Math.abs(suma)).toFixed(2)
+      }%
       </div></div>
     `;
     return plantilla;
   },
   porcentaje_egresos_item(data) {
-    let egresos = data.filter((itme) => { return itme.tipo_gasto === "+"})
+    let egresos = data.filter((itme) => {
+      return itme.tipo_gasto === "-";
+    });
     let plantilla = `
       <table class="table table-striped">
         <thead>
@@ -125,8 +131,9 @@ const opter = {
     return plantilla;
   },
   porcentaje_ingresos_item(data) {
-    let ingresos = data.filter((itme) => { return itme.tipo_gasto === "+"})
-    console.log(ingresos)
+    let ingresos = data.filter((itme) => {
+      return itme.tipo_gasto === "+";
+    });
     let plantilla = `
       <table class="table table-striped">
         <thead>
@@ -153,10 +160,7 @@ const opter = {
                           class="alert text-center alert-danger p-0 m-0 fs-6 w-auto h-75"
                           role="alert"
                         >
-                        ${
-                          
-                          
-                          (
+                        ${(
                           (parseFloat(element.valor) * 100) /
                           ingresos.reduce(
                             (acc, item) => acc + parseFloat(item.valor),
@@ -181,6 +185,32 @@ const opter = {
     `;
 
     return plantilla;
+  },
+
+  tables(ingresos, egresos) {
+
+    // Specify the configuration items and data for the chart
+    var option = {
+      title: {
+        text: "Ingresos vs Egresos",
+      },
+      tooltip: {},
+      legend: {
+        data: ["total"],
+      },
+      xAxis: {
+        data: ["Ingresos", "Egresos"],
+      },
+      yAxis: {},
+      series: [
+        {
+          
+          type: "bar",
+          data: [ingresos, egresos]
+        },
+      ],
+    };
+    return option;
   },
 
   total(ingresos, egresos) {
@@ -209,5 +239,6 @@ self.addEventListener("message", (e) => {
     opter.porcentaje_ingresos(data_ingresos),
     opter.total(opter.resta(data_egresos), opter.suma(data_ingresos)),
     opter.porcentaje_ingresos_item(data),
+    opter.tables(opter.suma(data_ingresos),opter.resta(data_egresos)),
   ]);
 });

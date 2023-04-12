@@ -5,12 +5,10 @@ export default{
 
     item_remove(e){
         e.target.parentElement.parentElement.parentElement.remove()
-        const id = e.target.id
         const data_set = e.target.dataset.id
-        console.log(data_set  , id )
         const datos_local = config.delete(
             "datos_ingresos",
-            id
+            data_set
         );
         myheader.show(datos_local)
     },
@@ -19,7 +17,10 @@ export default{
         const egresos = document.querySelector('#egresos_items');
         egresos.addEventListener("click", (e) => {
             e.target.id === "egresos" ? this.item_remove(e) : false;
-           
+        })
+        const ingresos = document.querySelector('#ingresos_items');
+        ingresos.addEventListener("click", (e) => {
+            e.target.id === "ingresos" ? this.item_remove(e) : false;
         })
 
     }

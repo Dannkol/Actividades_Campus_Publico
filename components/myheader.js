@@ -6,12 +6,12 @@ export default {
   }),
 
   show(datos_local) {
-    
     const egresos = document.querySelector("#egresos");
     const ingresos = document.querySelector("#ingresos");
     const total = document.querySelector("#total");
     const porcentaje_ingresos_item = document.querySelector("#ingresos_items");
     const porcentaje_egresos_item = document.querySelector("#egresos_items");
+    const table = echarts.init(document.getElementById("table"));
     const myworker = this.myworker;
     myworker.postMessage({ data: datos_local });
     myworker.addEventListener("message", (e) => {
@@ -20,6 +20,7 @@ export default {
       porcentaje_ingresos_item.innerHTML = "";
       ingresos.innerHTML = "";
       total.innerHTML = "";
+      table.innerHTML = "";
       let doc_egresos = new DOMParser().parseFromString(e.data[0], "text/html");
       let doc_porcentaje_egresos_item = new DOMParser().parseFromString(
         e.data[1],
@@ -34,6 +35,8 @@ export default {
         e.data[4],
         "text/html"
       );
+      let doc_tables = e.data[5]
+
 
       total.appendChild(...doc_total.body.children);
       ingresos.appendChild(...doc_ingresos.body.children);
@@ -44,6 +47,7 @@ export default {
       porcentaje_egresos_item.appendChild(
         ...doc_porcentaje_egresos_item.body.children
       );
+      table.setOption(doc_tables);
     });
   },
 

@@ -5,7 +5,6 @@ export default {
         function nodatos(storage, datos_formulario){
             let temporal = []
             temporal.unshift(datos_formulario)
-            console.log(temporal)
             localStorage.setItem(storage,JSON.stringify(temporal))
             return localStorage.getItem(storage)
         }
@@ -23,11 +22,9 @@ export default {
     delete(storage,id){
         let datalocal = localStorage.getItem(storage)
         let data = JSON.parse(datalocal)
-        console.log(data)
-        data.splice(id,1)
-        console.log(data)
+        delete(data[id])
+        data = data.filter(item => item !== undefined)
         localStorage.setItem(storage, JSON.stringify(data) )
-        console.log(localStorage.getItem(storage))
         return localStorage.getItem(storage)
     }
 

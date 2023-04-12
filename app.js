@@ -1,9 +1,20 @@
+
+//componentes de la aplicacion
+
 import myheader from "./components/myheader.js";
 import delet from "./components/delet.js";
 
 
+
+
+
+localStorage.getItem("datos_ingresos") !== null ?  
+  myheader.show(localStorage.getItem("datos_ingresos")):
+  localStorage.setItem("datos_ingresos", JSON.stringify([]));
 myheader.formData()
 delet.delete()
+
+
 
 
 /* let data =     [
