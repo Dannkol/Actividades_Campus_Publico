@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body style="margin: 0 auto; padding: 0;">
+    <form>
+      <fieldset>
+        <legend>Clase Lapiz</legend>
+        <label>Color</label>
+        <input type="color" name="color" /><p />
+        <label>Dimension</label>
+        <input
+          type="range"
+          value="0"
+          min="0"
+          max="100"
+          autocomplete="off"
+          step="1"
+          name="dimension"
+        /><p />
+        <fieldset id="marca">
+          <legend>Marca</legend>
+          <p>
+            <label>
+              <input type="radio" name="marca" value="Mongo" />
+              <span>Mongo</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="marca" value="Norma" />
+              <span>Norma</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="marca" value="Fabel Castle" />
+              <span>Fabel Castle</span>
+            </label>
+          </p>
+
+          <p></p>
+          <p>
+            <label>
+              <input type="radio" name="marca" value="Big" />
+              <span>Big</span>
+            </label>
+          </p>
+        </fieldset>
+        <fieldset id="borrador">
+          <legend>Borrador</legend>
+          <p>
+            <label>
+              <input type="radio" name="borrador" value="true" />
+              <span>Tiene</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="borrador" value="false" />
+              <span>No tiene</span>
+            </label>
+          </p>
+        </fieldset>
+        <fieldset id="material">
+          <legend>Material</legend>
+          <p>
+            <label>
+              <input type="radio" name="material" value="Madera" />
+              <span> Madera </span></label
+            >
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="material" value="Goma" />
+              <span>Goma</span>
+            </label>
+          </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar" />
+        </p>
+      </fieldset>
+    </form>
+    <br/>
+    <table class="centered" >
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Dimension</th>
+          <th>Marca</th>
+          <th>Borrador</th>
+          <th>Material</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
