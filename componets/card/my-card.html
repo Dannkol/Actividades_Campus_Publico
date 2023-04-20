@@ -1,0 +1,127 @@
+<div class="wrapper">
+  <div class="card front-face">
+    <img
+      id="img_front_face"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/22.png"
+    />
+  </div>
+  <div class="card back-face">
+    <img
+      id="img_back_face"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/22.gif"
+    />
+    <div class="info">
+      <div class="title" id="name">Mohamed Yousef</div>
+      <p id="species">Blogger - developer</p>
+    </div>
+    <ul style="margin-right: auto;">
+        <label>
+            <h6>Ataque</h6>
+            <a href="#" id="attack">112</a>
+        </label>
+        <label>
+            <h6>Vida</h6>
+            <a href="#" id="live">125</a>
+        </label>
+        <label>
+            <h6>Defenza</h6>
+            <a href="#" id="defense">14</a>
+        </label>
+        <label>
+            <h6>Velocidad</h6>
+            <a href="#" id="speed">15</a>
+        </label>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+  :host {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :host h6{
+    margin: 0;
+  }
+  :host ::selection {
+    color: #fff;
+    background: #fff;
+  }
+  :host .wrapper {
+    height: 400px;
+    width: 290px;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+  }
+  :host .wrapper .card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    transform: translateY(0deg);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+  :host .wrapper:hover > .front-face {
+    transform: rotateY(-180deg);
+  }
+  :host .wrapper .card img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  :host .wrapper .back-face {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transform: rotateY(180deg);
+  }
+  :host .wrapper:hover > .back-face {
+    transform: rotateY(0deg);
+  }
+  :host .wrapper .back-face img {
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  }
+  :host .wrapper .back-face .info {
+    text-align: center;
+  }
+  :host .back-face .info .title {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  :host .back-face ul {
+    display: flex;
+  }
+  :host .back-face ul a {
+    display: block;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    margin: 0 5px;
+    line-height: 38px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+    transition: all 0.5s ease;
+  }
+  :host .back-face ul a:hover {
+    color: #1cc7d0;
+    border-color: #1cc7d0;
+    background: linear-gradient(375deg, transparent, transparent);
+  }
+</style>

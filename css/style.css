@@ -1,0 +1,9 @@
+
+.card_poke{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+}
