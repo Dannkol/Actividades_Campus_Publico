@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
     const myWorker = new Worker("./componets/card/wkmycard.js")
     myWorker.postMessage([])
     myWorker.addEventListener("message", (e)=>{
-        console.log(e.data);
         let doc = new DOMParser().parseFromString(e.data,"text/html")
-        console.log(doc.body)
         document.body.appendChild(...doc.body.children)
     })
     

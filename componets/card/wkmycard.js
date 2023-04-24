@@ -11,8 +11,10 @@ const template = {
 
     async pokemonRenderer(data_pokemon) {
         plantila = ''
+        console.log()
         plantila += /*html*/ `
-            <my-card name="${data_pokemon.forms[0].name}" img_front="" img_back="" species="" hp=""  speed="" defense="" attack="" ></my-card>    
+
+            <my-card name="${data_pokemon.forms[0].name}" img_front="${data_pokemon.sprites.other.home['front_default']}" img_back="${data_pokemon.sprites.versions['generation-v']['black-white'].animated.front_default}" species="${data_pokemon.species.name}" hp="${data_pokemon.stats[0].base_stat}"  speed="${data_pokemon.stats[5].base_stat}" defense="${data_pokemon.stats[2].base_stat}" attack="${data_pokemon.stats[1].base_stat}" ></my-card>    
 
         `
         return plantila;
@@ -28,12 +30,12 @@ const template = {
         }));
         html = `
         
-            <div class="card_poke"
-            >
+            <div class="card_poke">
+
                 ${html.map((item) => item).join("")}
+            
             </div>
         `
-        console.log(html)
         return html;
       }
 }
