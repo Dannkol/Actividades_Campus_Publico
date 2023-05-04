@@ -15,15 +15,24 @@ export default {
             static get observedAttributes() {
                 return [];
             }
+
+            handleEvent(e){
+                (e.type === 'click') ? this.sendMesaggerEvent(e) : undefined;
+            }
+
+            sendMesaggerEvent(e){
+                console.log(e.target.textContent);
+            }
+
+
             attributeChangedCallback(attr, oldValue, newValue) {
                 // console.log(attr);
                 // console.log(oldValue);
                 // console.log(newValue);
                 
-                
             }
             connectedCallback() {
-                
+                this.shadowRoot.querySelector('button').addEventListener('click', this.handleEvent.bind(this))
             }
         }
         window.customElements.define(componet[1], this.name);
