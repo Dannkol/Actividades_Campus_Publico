@@ -6,10 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./app.js" type="module" defer></script>
+    <style>
+        .aside{
+            float: right;
+
+        }
+        .display-flex{
+            display: flex;
+            gap: 30px;
+        }
+        .aside{
+            display: flex;
+            width: 100%;
+            align-content: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
-    <my-header>
-        <h6>hOLA MUNFO</h6>
-    </my-header>
+    <div>
+        <my-header>
+            <h1>hOLA MUNFO</h1>
+        </my-header>
+    </div>
+    <div class="display-flex">
+        <div>
+            <my-section>
+                <h1>my-section</h1>
+            </my-section>
+            <my-select>
+                <h1>
+                    my-select
+                </h1>
+            </my-select>
+        </div>
+        <div class="aside">
+            <my-nav>
+                <h1>my-nav</h1>
+            </my-nav>
+        </div>
+    </div>
+
+    <my-footer>
+        <h1>
+            my-footer
+        </h1>
+    </my-footer>
 </body>
 </html>
