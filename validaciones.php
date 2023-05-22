@@ -1,5 +1,6 @@
 <?php
 
+//validamos si el dato es permitido
 
 function validarNumerosEnArray($array) {
     foreach ($array as $elemento) {

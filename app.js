@@ -1,4 +1,5 @@
 let myFormulario = document.querySelector('#myFormulario');
+const result = document.querySelector('#result');
 
 myFormulario.addEventListener('submit', async (e)=> {
     e.preventDefault();
@@ -8,5 +9,6 @@ myFormulario.addEventListener('submit', async (e)=> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })).json()
-    console.log(res)
+    console.log(res);
+    result.innerHTML = `<h1>Resultado</h1><h4>${res.valides}</h4> </h4>${res.mayor}</h4>`;
 });
