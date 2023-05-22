@@ -3,8 +3,8 @@
 //validamos si el dato es permitido
 
 function validarNumerosEnArray($array) {
-    for ($i = 1; $i <= (count($array)/2) ; $i++){
-        return (!is_numeric($array['edad' . $i])) ? false : true;
+    for ($i = 1; $i <= count($array) ; $i++){
+        return (!is_numeric($array['numero' . $i])) ? false : true;
     }
 }
 

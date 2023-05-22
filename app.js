@@ -9,7 +9,5 @@ myFormulario.addEventListener('submit', async (e)=> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })).json()
-    console.log(data);
-    console.log(res);
-    result.innerHTML = `<h1>Voltaje</h1><h4>${res.voltaje === undefined ? res.message : res.voltaje}(V)</h4>`;
+    result.innerHTML = `<h1>${res.resultado === true ? "suma y resta" : "division y producto"}</h1><div>${res.resultado === true ? `<h4>suma : ${res.operacion[0]}</h4><h4> resta : ${res.operacion[1]} </h4>` : `<h4>division : ${res.operacion[0]}</h4><h4> producto : ${res.operacion[1]} </h4>`}</div>`;
 });
