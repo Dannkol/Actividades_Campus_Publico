@@ -4,11 +4,10 @@
 
     function reqpost($_DATA){
      if(validarNumerosEnArray($_DATA)){
-            $_par = (float) $_DATA['numero'] % 2;
+            $_voltaje = (float) $_DATA['resistencia'] * $_DATA['corriente'] ;
             $_Respuesta =  (array) [
-            "mayor" => ($_DATA['numero']>10) ? "es mayor" : "no es mayor",
-            "numero" => $_DATA,
-            "valides" => ($_par == 0) ? "es par" : "no es par"
+            "datos" => $_DATA,
+            "voltaje" => $_voltaje
         ];
         }else{
             $_Respuesta = error('Datos no permitidos');

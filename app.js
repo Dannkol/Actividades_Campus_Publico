@@ -10,5 +10,5 @@ myFormulario.addEventListener('submit', async (e)=> {
         body: JSON.stringify(data)
     })).json()
     console.log(res);
-    result.innerHTML = `<h1>Resultado</h1><h4>${res.valides}</h4> </h4>${res.mayor}</h4>`;
+    result.innerHTML = `<h1>Voltaje</h1><h4>${res.voltaje}(V)</h4>`;
 });
