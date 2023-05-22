@@ -14,6 +14,7 @@
         default => error('Metodo no permitido')
     };
 
+
     echo json_encode($res);
 
 

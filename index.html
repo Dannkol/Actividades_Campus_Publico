@@ -8,12 +8,37 @@
     <script src="./app.js" defer></script>
 </head>
 <body>
-    <h2>las unidades suminstradas estan en ohm y amperios</h2>
     <form id="myFormulario">
-        <input type="text" name="corriente" placeholder="ingrese la corriente del circuito" pattern="[0-9-.]+" required>
-        <input type="text" name="resistencia" placeholder="ingrese la resistencia del circuito" pattern="[0-9-.]+" required>
-        <button type="submit">Enviar</button>
-    </form>
+        <fieldset>
+          <legend>datos de la persona 1</legend>
+      
+          <input type="text" id="nombre1" name="nombre1" required>
+          <label for="nombre1">nombre de la persona 1</label><br>
+      
+          <input type="text" id="edad1" name="edad1" pattern="[0-9-.]+" required>
+          <label for="edad1">Edad de la persona 1</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>datos de la persona 2</legend>
+        
+            <input type="text" id="nombre2" name="nombre2" required>
+            <label for="nombre2">nombre de la persona 2</label><br>
+        
+            <input type="text" id="edad2" name="edad2" pattern="[0-9-.]+" required>
+            <label for="edad2">Edad de la persona 2</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>datos de la persona 3</legend>
+        
+            <input type="text" id="nombre3" name="nombre3" required>
+            <label for="nombre3">nombre de la persona 3</label><br>
+        
+            <input type="text" id="edad3" name="edad3" pattern="[0-9-.]+" required>
+            <label for="edad3">Edad de la persona 3</label><br>
+        </fieldset><br>
+        <button type="submit">enviar</button>
+      </form>
+      
     <div id="result">
 
     </div>
