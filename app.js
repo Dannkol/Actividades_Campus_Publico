@@ -13,10 +13,10 @@ myFormulario.addEventListener("submit", async (e) => {
     })
   ).json();
   console.log(res);
-  result.innerHTML = `<h1>Factura</h1><div>
+  result.innerHTML = `<h1>respuetas</h1><div>
   
-    <h4>nombre del producto: ${res.nom_produc}</h4>
-    <h4>precio a pagar: ${res.factura}</h4>
+    <h4>perimetro del cuadrado: ${res.perimetro}</h4>
+    <h4>area del cuadrado: ${res.area}</h4>
     
   </div>`;
 });

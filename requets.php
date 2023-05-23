@@ -5,10 +5,12 @@
     function reqpost($_DATA){
       if(validarNumerosEnArray($_DATA)){
 
+
+
         $_Respuesta =  (array) [
             "datos" => $_DATA,
-            "nom_produc" => $_DATA['nom_prduc'],
-            "factura" => $_DATA['cantidad'] * $_DATA['precio'],
+            "perimetro" => $_DATA['cuadrado']*4,
+            "area" => $_DATA['altura'] * $_DATA['base'],
         ];
         }else{
             $_Respuesta = error('Datos no permitidos');
