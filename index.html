@@ -10,22 +10,16 @@
 <body>
     <form id="myFormulario">
         <fieldset>
-          <legend>Punto 5 taller php</legend>
+          <legend>Punto 7 taller php</legend>
       
-          <input type="text" id="nombre" name="nombre" required>
-          <label for="nombre">ingrese el nombre</label><br>
+          <input type="text" id="nom_prduc" name="nom_prduc" required>
+          <label for="nom_prduc">ingrese el nombre</label><br>
       
-          <input type="text" id="edad" name="edad" pattern="[0-9-.]+" required>
-          <label for="edad">ingrese la edad</label><br>
+          <input type="text" id="precio" name="precio" pattern="[0-9-.]+" required>
+          <label for="precio">ingrese el precio del producto</label><br>
 
-          <input type="text" id="nota" name="nota" pattern="[0-5-.]+" required>
-          <label for="nota">nota definitiva</label><br>
-
-          <select name="sexo" id="sexo">
-            <option value="masculino">masculino</option>
-            <option value="femenino">femenino</option>
-          </select>
-          <label for="sexo">Sexo de la persona</label>
+          <input type="text" id="cantidad" name="cantidad" pattern="[0-9-.]+" required>
+          <label for="cantidad">cantidad que lleva</label><br>
 
         </fieldset><br>
         <button type="submit">guardar</button>
@@ -34,17 +28,6 @@
     <div id="result">
 
     </div>
-
-    <dialog id="favDialog">
-      <form method="dialog" id="modal">
-        <section>
-          <p>agregar otro dato?</p>
-        <menu>
-          <button id="cancel" type="reset">Si, agregar otro dato</button>
-          <button type="submit">No, enviar datos</button>
-        </menu>
-      </form>
-    </dialog>
 
 </body>
 </html>
