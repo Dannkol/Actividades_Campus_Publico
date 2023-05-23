@@ -4,7 +4,7 @@
 
 function validarNumerosEnArray($array) {
     foreach ($array as $objeto){
-        return ((!is_numeric($objeto))) ? false : true;
+        return ((!is_numeric($objeto['salto']))) ? false : true;
     }
 }
 

@@ -10,16 +10,13 @@
 <body>
     <form id="myFormulario">
         <fieldset>
-          <legend>Punto 8 taller php</legend>
+          <legend>Punto 9 taller php</legend>
       
-          <input type="text" id="cuadrado" name="cuadrado" pattern="[0-9-.]+" required>
-          <label for="cuadrado">lado de un cuadrado</label><br>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="nombre">ingrese el nombre del atleta</label><br>
       
-          <input type="text" id="base" name="base" pattern="[0-9-.]+" required>
-          <label for="base">base del triangulo</label><br>
-
-          <input type="text" id="altura" name="altura" pattern="[0-9-.]+" required>
-          <label for="altura">altura del triangulo</label><br>
+          <input type="text" id="salto" name="salto" pattern="[0-9-.]+" required>
+          <label for="salto">marca del salto en metros</label><br>
 
         </fieldset><br>
         <button type="submit">guardar</button>
@@ -28,6 +25,17 @@
     <div id="result">
 
     </div>
+
+    <dialog id="favDialog">
+      <form method="dialog" id="modal">
+        <section>
+          <p>agregar otro dato?</p>
+        <menu>
+          <button id="cancel" type="reset">Si, agregar otro dato</button>
+          <button type="submit">No, enviar datos</button>
+        </menu>
+      </form>
+    </dialog>
 
 </body>
 </html>
